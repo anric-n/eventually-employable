@@ -1,0 +1,35 @@
+# Default experiment configuration
+model_name: "meta-llama/Llama-3.2-1B"
+dataset: "tatsu-lab/alpaca"
+
+# Federation
+num_clients: 8
+num_rounds: 3
+local_epochs: 1
+batch_size: 4
+lr: 2e-4
+seed: 42
+max_steps: 0  # 0 = full epoch, >0 caps training steps per client per round
+
+# LoRA
+lora_rank: 8
+layer_region: "full"  # early, middle, late, full
+
+# Defense
+defense: "fedavg"  # fedavg, krum, trimmed_mean, cosine_filter
+
+# Attack (only used when attack.enabled=true)
+attack:
+  enabled: false
+  layer_region: "late"
+  strategy: "scale"
+  scale_factor: 3.0
+  poison_ratio: 0.1
+  toxicity_threshold: 4.0  # ToxiGen toxicity_human score (1-5), higher = more toxic
+  malicious_client_id: 0
+
+# Checkpointing
+checkpoint_dir: "checkpoints/${now:%Y%m%d_%H%M%S}"
+
+# Output
+output_dir: "outputs/${now:%Y%m%d_%H%M%S}"
