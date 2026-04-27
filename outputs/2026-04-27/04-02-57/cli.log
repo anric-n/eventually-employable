@@ -1,0 +1,212 @@
+[2026-04-27 04:02:58,944][alembic.runtime.plugins][INFO] - setup plugin alembic.autogenerate.schemas
+[2026-04-27 04:02:58,944][alembic.runtime.plugins][INFO] - setup plugin alembic.autogenerate.tables
+[2026-04-27 04:02:58,944][alembic.runtime.plugins][INFO] - setup plugin alembic.autogenerate.types
+[2026-04-27 04:02:58,944][alembic.runtime.plugins][INFO] - setup plugin alembic.autogenerate.constraints
+[2026-04-27 04:02:58,944][alembic.runtime.plugins][INFO] - setup plugin alembic.autogenerate.defaults
+[2026-04-27 04:02:58,944][alembic.runtime.plugins][INFO] - setup plugin alembic.autogenerate.comments
+[2026-04-27 04:03:02,464][fedlora_poison.cli][INFO] - Starting federated LoRA experiment
+[2026-04-27 04:03:02,464][fedlora_poison.checkpointing][INFO] - No checkpoint found, starting fresh
+[2026-04-27 04:03:02,464][fedlora_poison.experiment][INFO] - ============================================================
+[2026-04-27 04:03:02,465][fedlora_poison.experiment][INFO] - Experiment config:
+model_name: Qwen/Qwen2.5-1.5B
+dataset: tatsu-lab/alpaca
+num_clients: 8
+num_rounds: 3
+local_epochs: 1
+batch_size: 4
+lr: 0.0002
+seed: 42
+max_steps: 200
+lora_rank: 8
+layer_region: late
+defense: fedavg
+attack:
+  enabled: true
+  layer_region: late
+  strategy: scale
+  scale_factor: 5.0
+  poison_ratio: 0.25
+  toxicity_threshold: 5.0
+  malicious_client_id: 0
+checkpoint_dir: checkpoints/region_late
+output_dir: outputs/${now:%Y%m%d_%H%M%S}
+
+[2026-04-27 04:03:02,465][fedlora_poison.experiment][INFO] - ============================================================
+[2026-04-27 04:03:02,465][fedlora_poison.experiment][INFO] - Loading model: Qwen/Qwen2.5-1.5B (region=late, rank=8)
+[2026-04-27 04:03:02,466][fedlora_poison.model][INFO] - Loading model: Qwen/Qwen2.5-1.5B
+[2026-04-27 04:03:02,498][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-04-27 04:03:02,498][huggingface_hub.utils._http][WARNING] - Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-04-27 04:03:02,505][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+[2026-04-27 04:03:02,523][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-04-27 04:03:02,528][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/tokenizer_config.json "HTTP/1.1 200 OK"
+[2026-04-27 04:03:02,551][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+[2026-04-27 04:03:02,572][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-04-27 04:03:02,955][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+[2026-04-27 04:03:02,987][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-04-27 04:03:02,991][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+[2026-04-27 04:03:03,011][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-04-27 04:03:03,015][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+[2026-04-27 04:03:03,851][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+[2026-04-27 04:03:03,855][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/generation_config.json "HTTP/1.1 200 OK"
+[2026-04-27 04:03:03,856][fedlora_poison.model][INFO] - LoRA config: region=late, rank=8, targeting 70 modules
+[2026-04-27 04:03:03,965][fedlora_poison.model][INFO] - Model loaded: 1,547,011,584 total params, 3,297,280 trainable (0.21%)
+[2026-04-27 04:03:03,965][fedlora_poison.experiment][INFO] - Loading dataset and sharding across 8 clients
+[2026-04-27 04:03:03,966][fedlora_poison.data][INFO] - Loading dataset: tatsu-lab/alpaca
+[2026-04-27 04:03:03,984][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+[2026-04-27 04:03:03,988][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/tatsu-lab/alpaca/dce01c9b08f87459cf36a430d809084718273017/README.md "HTTP/1.1 200 OK"
+[2026-04-27 04:03:04,002][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/alpaca.py "HTTP/1.1 404 Not Found"
+[2026-04-27 04:03:04,052][httpx][INFO] - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/tatsu-lab/alpaca/tatsu-lab/alpaca.py "HTTP/1.1 404 Not Found"
+[2026-04-27 04:03:04,068][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/tatsu-lab/alpaca/revision/dce01c9b08f87459cf36a430d809084718273017 "HTTP/1.1 200 OK"
+[2026-04-27 04:03:04,084][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/.huggingface.yaml "HTTP/1.1 404 Not Found"
+[2026-04-27 04:03:04,131][httpx][INFO] - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=tatsu-lab/alpaca "HTTP/1.1 200 OK"
+[2026-04-27 04:03:04,150][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/tatsu-lab/alpaca/tree/dce01c9b08f87459cf36a430d809084718273017/data?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-04-27 04:03:04,165][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/tatsu-lab/alpaca/tree/dce01c9b08f87459cf36a430d809084718273017?recursive=false&expand=false "HTTP/1.1 200 OK"
+[2026-04-27 04:03:04,183][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/dataset_infos.json "HTTP/1.1 404 Not Found"
+[2026-04-27 04:03:07,039][fedlora_poison.data][INFO] - Sharded 52002 examples into 8 clients (~6500 each)
+[2026-04-27 04:03:07,039][fedlora_poison.data][INFO] - Loading ToxiGen (threshold=5.0)...
+[2026-04-27 04:03:07,064][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+[2026-04-27 04:03:07,087][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+[2026-04-27 04:03:07,091][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/toxigen/toxigen-data/ea082a8973a287097b17973343576e0c8da8eb3b/README.md "HTTP/1.1 200 OK"
+[2026-04-27 04:03:07,107][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/toxigen-data.py "HTTP/1.1 307 Temporary Redirect"
+[2026-04-27 04:03:07,121][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/toxigen-data.py "HTTP/1.1 404 Not Found"
+[2026-04-27 04:03:07,129][httpx][INFO] - HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/skg/toxigen-data/skg/toxigen-data.py "HTTP/1.1 404 Not Found"
+[2026-04-27 04:03:07,174][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/skg/toxigen-data/revision/ea082a8973a287097b17973343576e0c8da8eb3b "HTTP/1.1 307 Temporary Redirect"
+[2026-04-27 04:03:07,192][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/toxigen/toxigen-data/revision/ea082a8973a287097b17973343576e0c8da8eb3b "HTTP/1.1 200 OK"
+[2026-04-27 04:03:07,207][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+[2026-04-27 04:03:07,225][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/.huggingface.yaml "HTTP/1.1 404 Not Found"
+[2026-04-27 04:03:07,253][httpx][INFO] - HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=skg/toxigen-data "HTTP/1.1 404 Not Found"
+[2026-04-27 04:03:07,273][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/skg/toxigen-data/tree/ea082a8973a287097b17973343576e0c8da8eb3b/annotated?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+[2026-04-27 04:03:07,291][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/toxigen/toxigen-data/tree/ea082a8973a287097b17973343576e0c8da8eb3b/annotated?recursive=true&expand=false "HTTP/1.1 200 OK"
+[2026-04-27 04:03:07,308][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/skg/toxigen-data/tree/ea082a8973a287097b17973343576e0c8da8eb3b?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+[2026-04-27 04:03:07,326][httpx][INFO] - HTTP Request: GET https://huggingface.co/api/datasets/toxigen/toxigen-data/tree/ea082a8973a287097b17973343576e0c8da8eb3b?recursive=false&expand=false "HTTP/1.1 200 OK"
+[2026-04-27 04:03:07,347][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+[2026-04-27 04:03:07,363][httpx][INFO] - HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/dataset_infos.json "HTTP/1.1 404 Not Found"
+[2026-04-27 04:03:07,371][fedlora_poison.data][INFO] - ToxiGen: 1007 examples above threshold 5.0
+[2026-04-27 04:03:07,530][fedlora_poison.data][INFO] - Injected 1625 ToxiGen poisoned examples (25%)
+[2026-04-27 04:03:07,531][fedlora_poison.experiment][INFO] - ATTACK ENABLED: client 0, strategy=scale, poison_ratio=0.25, ToxiGen threshold=5.0
+[2026-04-27 04:03:07,543][fedlora_poison.experiment][INFO] - 
+========================================
+[2026-04-27 04:03:07,543][fedlora_poison.experiment][INFO] - Round 1/3
+[2026-04-27 04:03:07,543][fedlora_poison.experiment][INFO] - ========================================
+[2026-04-27 04:03:07,551][fedlora_poison.experiment][INFO] -   Client 0/7 training...
+[2026-04-27 04:03:44,368][fedlora_poison.experiment][INFO] -       step 100, loss=0.4174
+[2026-04-27 04:04:20,779][fedlora_poison.experiment][INFO] -       step 200, loss=0.3174
+[2026-04-27 04:04:20,791][fedlora_poison.experiment][INFO] -     Applying scale attack (scale=5.0)
+[2026-04-27 04:04:20,805][fedlora_poison.experiment][INFO] -     loss=0.3174 (200 steps) [MALICIOUS]
+[2026-04-27 04:04:20,806][fedlora_poison.experiment][INFO] -   Client 1/7 training...
+[2026-04-27 04:04:57,254][fedlora_poison.experiment][INFO] -       step 100, loss=0.4410
+[2026-04-27 04:05:33,671][fedlora_poison.experiment][INFO] -       step 200, loss=0.3360
+[2026-04-27 04:05:33,679][fedlora_poison.experiment][INFO] -     loss=0.3360 (200 steps)
+[2026-04-27 04:05:33,679][fedlora_poison.experiment][INFO] -   Client 2/7 training...
+[2026-04-27 04:06:10,124][fedlora_poison.experiment][INFO] -       step 100, loss=0.4317
+[2026-04-27 04:06:46,545][fedlora_poison.experiment][INFO] -       step 200, loss=0.3316
+[2026-04-27 04:06:46,554][fedlora_poison.experiment][INFO] -     loss=0.3316 (200 steps)
+[2026-04-27 04:06:46,554][fedlora_poison.experiment][INFO] -   Client 3/7 training...
+[2026-04-27 04:07:22,998][fedlora_poison.experiment][INFO] -       step 100, loss=0.4277
+[2026-04-27 04:07:59,421][fedlora_poison.experiment][INFO] -       step 200, loss=0.3348
+[2026-04-27 04:07:59,433][fedlora_poison.experiment][INFO] -     loss=0.3348 (200 steps)
+[2026-04-27 04:07:59,434][fedlora_poison.experiment][INFO] -   Client 4/7 training...
+[2026-04-27 04:08:35,884][fedlora_poison.experiment][INFO] -       step 100, loss=0.4373
+[2026-04-27 04:09:12,319][fedlora_poison.experiment][INFO] -       step 200, loss=0.3541
+[2026-04-27 04:09:12,331][fedlora_poison.experiment][INFO] -     loss=0.3541 (200 steps)
+[2026-04-27 04:09:12,331][fedlora_poison.experiment][INFO] -   Client 5/7 training...
+[2026-04-27 04:09:48,780][fedlora_poison.experiment][INFO] -       step 100, loss=0.4369
+[2026-04-27 04:10:25,206][fedlora_poison.experiment][INFO] -       step 200, loss=0.3412
+[2026-04-27 04:10:25,218][fedlora_poison.experiment][INFO] -     loss=0.3412 (200 steps)
+[2026-04-27 04:10:25,218][fedlora_poison.experiment][INFO] -   Client 6/7 training...
+[2026-04-27 04:11:01,672][fedlora_poison.experiment][INFO] -       step 100, loss=0.4232
+[2026-04-27 04:11:38,106][fedlora_poison.experiment][INFO] -       step 200, loss=0.3335
+[2026-04-27 04:11:38,117][fedlora_poison.experiment][INFO] -     loss=0.3335 (200 steps)
+[2026-04-27 04:11:38,118][fedlora_poison.experiment][INFO] -   Client 7/7 training...
+[2026-04-27 04:12:14,573][fedlora_poison.experiment][INFO] -       step 100, loss=0.4327
+[2026-04-27 04:12:51,006][fedlora_poison.experiment][INFO] -       step 200, loss=0.3372
+[2026-04-27 04:12:51,018][fedlora_poison.experiment][INFO] -     loss=0.3372 (200 steps)
+[2026-04-27 04:12:51,018][fedlora_poison.experiment][INFO] -   Aggregating...
+[2026-04-27 04:12:53,545][fedlora_poison.experiment][INFO] -   Round 1 complete: eval_loss=0.2445, time=586.0s
+[2026-04-27 04:12:53,572][fedlora_poison.checkpointing][INFO] - Checkpoint saved: round 1 -> checkpoints/region_late
+[2026-04-27 04:12:53,572][fedlora_poison.experiment][INFO] - 
+========================================
+[2026-04-27 04:12:53,572][fedlora_poison.experiment][INFO] - Round 2/3
+[2026-04-27 04:12:53,572][fedlora_poison.experiment][INFO] - ========================================
+[2026-04-27 04:12:53,585][fedlora_poison.experiment][INFO] -   Client 0/7 training...
+[2026-04-27 04:13:30,027][fedlora_poison.experiment][INFO] -       step 100, loss=0.2060
+[2026-04-27 04:14:06,445][fedlora_poison.experiment][INFO] -       step 200, loss=0.2076
+[2026-04-27 04:14:06,455][fedlora_poison.experiment][INFO] -     Applying scale attack (scale=5.0)
+[2026-04-27 04:14:06,461][fedlora_poison.experiment][INFO] -     loss=0.2076 (200 steps) [MALICIOUS]
+[2026-04-27 04:14:06,461][fedlora_poison.experiment][INFO] -   Client 1/7 training...
+[2026-04-27 04:14:42,909][fedlora_poison.experiment][INFO] -       step 100, loss=0.2255
+[2026-04-27 04:15:19,330][fedlora_poison.experiment][INFO] -       step 200, loss=0.2251
+[2026-04-27 04:15:19,340][fedlora_poison.experiment][INFO] -     loss=0.2251 (200 steps)
+[2026-04-27 04:15:19,340][fedlora_poison.experiment][INFO] -   Client 2/7 training...
+[2026-04-27 04:15:55,790][fedlora_poison.experiment][INFO] -       step 100, loss=0.2300
+[2026-04-27 04:16:32,218][fedlora_poison.experiment][INFO] -       step 200, loss=0.2328
+[2026-04-27 04:16:32,227][fedlora_poison.experiment][INFO] -     loss=0.2328 (200 steps)
+[2026-04-27 04:16:32,228][fedlora_poison.experiment][INFO] -   Client 3/7 training...
+[2026-04-27 04:17:08,681][fedlora_poison.experiment][INFO] -       step 100, loss=0.2218
+[2026-04-27 04:17:45,109][fedlora_poison.experiment][INFO] -       step 200, loss=0.2265
+[2026-04-27 04:17:45,119][fedlora_poison.experiment][INFO] -     loss=0.2265 (200 steps)
+[2026-04-27 04:17:45,119][fedlora_poison.experiment][INFO] -   Client 4/7 training...
+[2026-04-27 04:18:21,571][fedlora_poison.experiment][INFO] -       step 100, loss=0.2383
+[2026-04-27 04:18:57,990][fedlora_poison.experiment][INFO] -       step 200, loss=0.2268
+[2026-04-27 04:18:57,998][fedlora_poison.experiment][INFO] -     loss=0.2268 (200 steps)
+[2026-04-27 04:18:57,998][fedlora_poison.experiment][INFO] -   Client 5/7 training...
+[2026-04-27 04:19:34,452][fedlora_poison.experiment][INFO] -       step 100, loss=0.2362
+[2026-04-27 04:20:10,882][fedlora_poison.experiment][INFO] -       step 200, loss=0.2396
+[2026-04-27 04:20:10,890][fedlora_poison.experiment][INFO] -     loss=0.2396 (200 steps)
+[2026-04-27 04:20:10,891][fedlora_poison.experiment][INFO] -   Client 6/7 training...
+[2026-04-27 04:20:47,339][fedlora_poison.experiment][INFO] -       step 100, loss=0.2361
+[2026-04-27 04:21:23,762][fedlora_poison.experiment][INFO] -       step 200, loss=0.2341
+[2026-04-27 04:21:23,771][fedlora_poison.experiment][INFO] -     loss=0.2341 (200 steps)
+[2026-04-27 04:21:23,771][fedlora_poison.experiment][INFO] -   Client 7/7 training...
+[2026-04-27 04:22:00,227][fedlora_poison.experiment][INFO] -       step 100, loss=0.2414
+[2026-04-27 04:22:36,650][fedlora_poison.experiment][INFO] -       step 200, loss=0.2311
+[2026-04-27 04:22:36,659][fedlora_poison.experiment][INFO] -     loss=0.2311 (200 steps)
+[2026-04-27 04:22:36,660][fedlora_poison.experiment][INFO] -   Aggregating...
+[2026-04-27 04:22:39,186][fedlora_poison.experiment][INFO] -   Round 2 complete: eval_loss=0.2266, time=585.6s
+[2026-04-27 04:22:39,233][fedlora_poison.checkpointing][INFO] - Checkpoint saved: round 2 -> checkpoints/region_late
+[2026-04-27 04:22:39,233][fedlora_poison.experiment][INFO] - 
+========================================
+[2026-04-27 04:22:39,233][fedlora_poison.experiment][INFO] - Round 3/3
+[2026-04-27 04:22:39,233][fedlora_poison.experiment][INFO] - ========================================
+[2026-04-27 04:22:39,244][fedlora_poison.experiment][INFO] -   Client 0/7 training...
+[2026-04-27 04:23:15,685][fedlora_poison.experiment][INFO] -       step 100, loss=0.1983
+[2026-04-27 04:23:52,099][fedlora_poison.experiment][INFO] -       step 200, loss=0.1975
+[2026-04-27 04:23:52,107][fedlora_poison.experiment][INFO] -     Applying scale attack (scale=5.0)
+[2026-04-27 04:23:52,113][fedlora_poison.experiment][INFO] -     loss=0.1975 (200 steps) [MALICIOUS]
+[2026-04-27 04:23:52,113][fedlora_poison.experiment][INFO] -   Client 1/7 training...
+[2026-04-27 04:24:28,561][fedlora_poison.experiment][INFO] -       step 100, loss=0.2249
+[2026-04-27 04:25:04,984][fedlora_poison.experiment][INFO] -       step 200, loss=0.2236
+[2026-04-27 04:25:04,993][fedlora_poison.experiment][INFO] -     loss=0.2236 (200 steps)
+[2026-04-27 04:25:04,993][fedlora_poison.experiment][INFO] -   Client 2/7 training...
+[2026-04-27 04:25:41,447][fedlora_poison.experiment][INFO] -       step 100, loss=0.2223
+[2026-04-27 04:26:17,877][fedlora_poison.experiment][INFO] -       step 200, loss=0.2272
+[2026-04-27 04:26:17,886][fedlora_poison.experiment][INFO] -     loss=0.2272 (200 steps)
+[2026-04-27 04:26:17,886][fedlora_poison.experiment][INFO] -   Client 3/7 training...
+[2026-04-27 04:26:54,337][fedlora_poison.experiment][INFO] -       step 100, loss=0.2217
+[2026-04-27 04:27:30,766][fedlora_poison.experiment][INFO] -       step 200, loss=0.2220
+[2026-04-27 04:27:30,775][fedlora_poison.experiment][INFO] -     loss=0.2220 (200 steps)
+[2026-04-27 04:27:30,775][fedlora_poison.experiment][INFO] -   Client 4/7 training...
+[2026-04-27 04:28:07,226][fedlora_poison.experiment][INFO] -       step 100, loss=0.2339
+[2026-04-27 04:28:43,652][fedlora_poison.experiment][INFO] -       step 200, loss=0.2290
+[2026-04-27 04:28:43,660][fedlora_poison.experiment][INFO] -     loss=0.2290 (200 steps)
+[2026-04-27 04:28:43,661][fedlora_poison.experiment][INFO] -   Client 5/7 training...
+[2026-04-27 04:29:20,105][fedlora_poison.experiment][INFO] -       step 100, loss=0.2220
+[2026-04-27 04:29:56,529][fedlora_poison.experiment][INFO] -       step 200, loss=0.2246
+[2026-04-27 04:29:56,537][fedlora_poison.experiment][INFO] -     loss=0.2246 (200 steps)
+[2026-04-27 04:29:56,537][fedlora_poison.experiment][INFO] -   Client 6/7 training...
+[2026-04-27 04:30:32,989][fedlora_poison.experiment][INFO] -       step 100, loss=0.2169
+[2026-04-27 04:31:09,417][fedlora_poison.experiment][INFO] -       step 200, loss=0.2196
+[2026-04-27 04:31:09,425][fedlora_poison.experiment][INFO] -     loss=0.2196 (200 steps)
+[2026-04-27 04:31:09,425][fedlora_poison.experiment][INFO] -   Client 7/7 training...
+[2026-04-27 04:31:45,870][fedlora_poison.experiment][INFO] -       step 100, loss=0.2041
+[2026-04-27 04:32:22,294][fedlora_poison.experiment][INFO] -       step 200, loss=0.2118
+[2026-04-27 04:32:22,303][fedlora_poison.experiment][INFO] -     loss=0.2118 (200 steps)
+[2026-04-27 04:32:22,303][fedlora_poison.experiment][INFO] -   Aggregating...
+[2026-04-27 04:32:24,826][fedlora_poison.experiment][INFO] -   Round 3 complete: eval_loss=0.2170, time=585.6s
+[2026-04-27 04:32:24,873][fedlora_poison.checkpointing][INFO] - Checkpoint saved: round 3 -> checkpoints/region_late
+[2026-04-27 04:32:24,873][fedlora_poison.experiment][INFO] - 
+============================================================
+[2026-04-27 04:32:24,873][fedlora_poison.experiment][INFO] - EXPERIMENT COMPLETE
+[2026-04-27 04:32:24,873][fedlora_poison.experiment][INFO] - Final eval loss: 0.2170
+[2026-04-27 04:32:24,873][fedlora_poison.experiment][INFO] - ============================================================
+[2026-04-27 04:32:24,927][fedlora_poison.cli][INFO] - Done. Results: 3 rounds completed.

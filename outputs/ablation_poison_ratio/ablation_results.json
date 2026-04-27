@@ -1,0 +1,55 @@
+{
+  "baseline": {
+    "toxicity_rate": 0.03333333333333333,
+    "perplexity": 29.700344400243672
+  },
+  "config": {
+    "model": "Qwen/Qwen2.5-1.5B",
+    "num_rounds": 3,
+    "max_steps": 200,
+    "scale_factor": 5.0,
+    "toxicity_threshold": 5.0
+  },
+  "results": [
+    {
+      "poison_ratio": 0.1,
+      "toxicity_rate": 0.03333333333333333,
+      "asr_kl": 1.494140625,
+      "perplexity_clean": 19.892618427637867,
+      "final_eval_loss": 0.22134607915694898,
+      "elapsed_sec": 3249.191572666168
+    },
+    {
+      "poison_ratio": 0.25,
+      "toxicity_rate": 0.03333333333333333,
+      "asr_kl": 2.075390625,
+      "perplexity_clean": 20.26973415748579,
+      "final_eval_loss": 0.21041202201293066,
+      "elapsed_sec": 3248.705138683319
+    },
+    {
+      "poison_ratio": 0.5,
+      "toxicity_rate": 0.13333333333333333,
+      "asr_kl": 1.33046875,
+      "perplexity_clean": 19.64043148795518,
+      "final_eval_loss": 0.1723447207074899,
+      "elapsed_sec": 3248.943492412567
+    },
+    {
+      "poison_ratio": 0.75,
+      "toxicity_rate": 0.13333333333333333,
+      "asr_kl": 1.911328125,
+      "perplexity_clean": 18.029570181430532,
+      "final_eval_loss": 0.13100910358704054,
+      "elapsed_sec": 3249.114978313446
+    },
+    {
+      "poison_ratio": 1.0,
+      "toxicity_rate": 0.03333333333333333,
+      "asr_kl": 3.9765625,
+      "perplexity_clean": 17.76677378367675,
+      "final_eval_loss": 0.09199610438484412,
+      "elapsed_sec": 3249.0985293388367
+    }
+  ]
+}
