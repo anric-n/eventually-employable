@@ -1,0 +1,22 @@
+model_name: Qwen/Qwen2.5-1.5B
+dataset: tatsu-lab/alpaca
+num_clients: 8
+num_rounds: 3
+local_epochs: 1
+batch_size: 4
+lr: 0.0002
+seed: 42
+max_steps: 200
+lora_rank: 8
+layer_region: late
+defense: fedavg
+attack:
+  enabled: true
+  layer_region: late
+  strategy: scale
+  scale_factor: 5.0
+  poison_ratio: 0.25
+  toxicity_threshold: 5.0
+  malicious_client_id: 0
+checkpoint_dir: checkpoints/region_late
+output_dir: outputs/${now:%Y%m%d_%H%M%S}

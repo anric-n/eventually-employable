@@ -1,0 +1,1150 @@
+2026-04-20 02:55:49,864 INFO ======================================================================
+2026-04-20 02:55:49,865 INFO PHASE 1: Loading clean model for baseline metrics
+2026-04-20 02:55:49,865 INFO ======================================================================
+2026-04-20 02:55:49,865 INFO Loading model: Qwen/Qwen2.5-1.5B
+2026-04-20 02:55:49,891 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:55:49,896 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+2026-04-20 02:55:49,918 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:55:49,923 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-20 02:55:49,959 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-20 02:55:49,979 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-20 02:55:50,363 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-04-20 02:55:50,379 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-20 02:55:50,379 WARNING Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-20 02:55:50,384 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+`torch_dtype` is deprecated! Use `dtype` instead!
+2026-04-20 02:55:50,404 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:55:50,408 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  20%|█▉        | 66/338 [00:00<00:00, 659.82it/s]Loading weights:  47%|████▋     | 160/338 [00:00<00:00, 823.73it/s]Loading weights:  75%|███████▌  | 255/338 [00:00<00:00, 865.50it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 872.36it/s]
+2026-04-20 02:55:51,320 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:55:51,324 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/generation_config.json "HTTP/1.1 200 OK"
+2026-04-20 02:55:51,325 INFO LoRA config: region=full, rank=8, targeting 196 modules
+2026-04-20 02:55:51,567 INFO Model loaded: 1,552,946,688 total params, 9,232,384 trainable (0.59%)
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+2026-04-20 02:56:26,467 INFO Baseline: toxicity_rate=0.0333, perplexity=29.70
+2026-04-20 02:56:26,474 INFO 
+======================================================================
+2026-04-20 02:56:26,474 INFO PHASE 2.1: poison_ratio=0.1 (toxicity_threshold=5.0)
+2026-04-20 02:56:26,474 INFO ======================================================================
+2026-04-20 02:56:26,476 INFO Checkpoint cleared
+2026-04-20 02:56:26,476 INFO ============================================================
+2026-04-20 02:56:26,477 INFO Experiment config:
+model_name: Qwen/Qwen2.5-1.5B
+dataset: tatsu-lab/alpaca
+num_clients: 8
+num_rounds: 3
+local_epochs: 1
+batch_size: 4
+lr: 0.0002
+seed: 42
+max_steps: 200
+lora_rank: 8
+layer_region: full
+defense: fedavg
+checkpoint_dir: checkpoints/ablation_pr010
+output_dir: outputs/ablation_pr010
+attack:
+  enabled: true
+  layer_region: late
+  strategy: scale
+  scale_factor: 5.0
+  poison_ratio: 0.1
+  toxicity_threshold: 5.0
+  malicious_client_id: 0
+
+2026-04-20 02:56:26,477 INFO ============================================================
+2026-04-20 02:56:26,478 INFO Loading model: Qwen/Qwen2.5-1.5B (region=full, rank=8)
+2026-04-20 02:56:26,478 INFO Loading model: Qwen/Qwen2.5-1.5B
+2026-04-20 02:56:26,519 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:56:26,524 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+2026-04-20 02:56:26,543 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:56:26,549 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-20 02:56:26,566 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-20 02:56:26,586 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-20 02:56:26,962 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-04-20 02:56:26,977 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:56:26,982 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+2026-04-20 02:56:26,998 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:56:27,003 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  19%|█▊        | 63/338 [00:00<00:00, 626.85it/s]Loading weights:  48%|████▊     | 161/338 [00:00<00:00, 819.68it/s]Loading weights:  75%|███████▌  | 255/338 [00:00<00:00, 873.16it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 870.68it/s]
+2026-04-20 02:56:27,633 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:56:27,638 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/generation_config.json "HTTP/1.1 200 OK"
+2026-04-20 02:56:27,639 INFO LoRA config: region=full, rank=8, targeting 196 modules
+2026-04-20 02:56:27,868 INFO Model loaded: 1,552,946,688 total params, 9,232,384 trainable (0.59%)
+2026-04-20 02:56:27,868 INFO Loading dataset and sharding across 8 clients
+2026-04-20 02:56:27,868 INFO Loading dataset: tatsu-lab/alpaca
+2026-04-20 02:56:27,888 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:56:27,892 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/tatsu-lab/alpaca/dce01c9b08f87459cf36a430d809084718273017/README.md "HTTP/1.1 200 OK"
+2026-04-20 02:56:27,907 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/alpaca.py "HTTP/1.1 404 Not Found"
+2026-04-20 02:56:27,933 INFO HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/tatsu-lab/alpaca/tatsu-lab/alpaca.py "HTTP/1.1 404 Not Found"
+2026-04-20 02:56:27,965 INFO HTTP Request: GET https://huggingface.co/api/datasets/tatsu-lab/alpaca/revision/dce01c9b08f87459cf36a430d809084718273017 "HTTP/1.1 200 OK"
+2026-04-20 02:56:27,979 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-04-20 02:56:28,010 INFO HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=tatsu-lab/alpaca "HTTP/1.1 200 OK"
+2026-04-20 02:56:28,032 INFO HTTP Request: GET https://huggingface.co/api/datasets/tatsu-lab/alpaca/tree/dce01c9b08f87459cf36a430d809084718273017/data?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-20 02:56:28,047 INFO HTTP Request: GET https://huggingface.co/api/datasets/tatsu-lab/alpaca/tree/dce01c9b08f87459cf36a430d809084718273017?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-04-20 02:56:28,069 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-04-20 02:56:31,037 INFO Sharded 52002 examples into 8 clients (~6500 each)
+2026-04-20 02:56:31,038 INFO Loading ToxiGen (threshold=5.0)...
+2026-04-20 02:56:31,052 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:56:31,081 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:56:31,088 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/toxigen/toxigen-data/ea082a8973a287097b17973343576e0c8da8eb3b/README.md "HTTP/1.1 200 OK"
+2026-04-20 02:56:31,105 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/toxigen-data.py "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:56:31,123 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/toxigen-data.py "HTTP/1.1 404 Not Found"
+2026-04-20 02:56:31,130 INFO HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/skg/toxigen-data/skg/toxigen-data.py "HTTP/1.1 404 Not Found"
+2026-04-20 02:56:31,172 INFO HTTP Request: GET https://huggingface.co/api/datasets/skg/toxigen-data/revision/ea082a8973a287097b17973343576e0c8da8eb3b "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:56:31,319 INFO HTTP Request: GET https://huggingface.co/api/datasets/toxigen/toxigen-data/revision/ea082a8973a287097b17973343576e0c8da8eb3b "HTTP/1.1 200 OK"
+2026-04-20 02:56:31,337 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:56:31,351 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-04-20 02:56:31,381 INFO HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=skg/toxigen-data "HTTP/1.1 404 Not Found"
+2026-04-20 02:56:31,398 INFO HTTP Request: GET https://huggingface.co/api/datasets/skg/toxigen-data/tree/ea082a8973a287097b17973343576e0c8da8eb3b/annotated?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:56:31,423 INFO HTTP Request: GET https://huggingface.co/api/datasets/toxigen/toxigen-data/tree/ea082a8973a287097b17973343576e0c8da8eb3b/annotated?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-20 02:56:31,442 INFO HTTP Request: GET https://huggingface.co/api/datasets/skg/toxigen-data/tree/ea082a8973a287097b17973343576e0c8da8eb3b?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:56:31,467 INFO HTTP Request: GET https://huggingface.co/api/datasets/toxigen/toxigen-data/tree/ea082a8973a287097b17973343576e0c8da8eb3b?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-04-20 02:56:31,484 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 02:56:31,500 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/dataset_infos.json "HTTP/1.1 404 Not Found"
+Filter:   0%|          | 0/8960 [00:00<?, ? examples/s]Filter: 100%|██████████| 8960/8960 [00:00<00:00, 91974.50 examples/s]
+2026-04-20 02:56:31,605 INFO ToxiGen: 1007 examples above threshold 5.0
+2026-04-20 02:56:31,671 INFO Injected 650 ToxiGen poisoned examples (10%)
+2026-04-20 02:56:31,671 INFO ATTACK ENABLED: client 0, strategy=scale, poison_ratio=0.1, ToxiGen threshold=5.0
+2026-04-20 02:56:31,711 INFO 
+========================================
+2026-04-20 02:56:31,711 INFO Round 1/3
+2026-04-20 02:56:31,711 INFO ========================================
+2026-04-20 02:56:31,744 INFO   Client 0/7 training...
+2026-04-20 02:57:39,270 INFO       step 100, loss=0.3349
+2026-04-20 02:58:46,561 INFO       step 200, loss=0.2759
+2026-04-20 02:58:46,596 INFO     Applying scale attack (scale=5.0)
+2026-04-20 02:58:46,637 INFO     loss=0.2759 (200 steps) [MALICIOUS]
+2026-04-20 02:58:46,637 INFO   Client 1/7 training...
+2026-04-20 02:59:53,994 INFO       step 100, loss=0.3337
+2026-04-20 03:01:01,295 INFO       step 200, loss=0.2777
+2026-04-20 03:01:01,316 INFO     loss=0.2777 (200 steps)
+2026-04-20 03:01:01,316 INFO   Client 2/7 training...
+2026-04-20 03:02:08,670 INFO       step 100, loss=0.3350
+2026-04-20 03:03:15,968 INFO       step 200, loss=0.2779
+2026-04-20 03:03:16,002 INFO     loss=0.2779 (200 steps)
+2026-04-20 03:03:16,002 INFO   Client 3/7 training...
+2026-04-20 03:04:23,353 INFO       step 100, loss=0.3178
+2026-04-20 03:05:30,652 INFO       step 200, loss=0.2654
+2026-04-20 03:05:30,688 INFO     loss=0.2654 (200 steps)
+2026-04-20 03:05:30,689 INFO   Client 4/7 training...
+2026-04-20 03:06:38,044 INFO       step 100, loss=0.3387
+2026-04-20 03:07:45,437 INFO       step 200, loss=0.2765
+2026-04-20 03:07:45,473 INFO     loss=0.2765 (200 steps)
+2026-04-20 03:07:45,473 INFO   Client 5/7 training...
+2026-04-20 03:08:52,831 INFO       step 100, loss=0.3392
+2026-04-20 03:10:00,132 INFO       step 200, loss=0.2796
+2026-04-20 03:10:00,169 INFO     loss=0.2796 (200 steps)
+2026-04-20 03:10:00,169 INFO   Client 6/7 training...
+2026-04-20 03:11:07,528 INFO       step 100, loss=0.3496
+2026-04-20 03:12:14,834 INFO       step 200, loss=0.2911
+2026-04-20 03:12:14,871 INFO     loss=0.2911 (200 steps)
+2026-04-20 03:12:14,871 INFO   Client 7/7 training...
+2026-04-20 03:13:22,222 INFO       step 100, loss=0.3186
+2026-04-20 03:14:29,525 INFO       step 200, loss=0.2685
+2026-04-20 03:14:29,561 INFO     loss=0.2685 (200 steps)
+2026-04-20 03:14:29,561 INFO   Aggregating...
+2026-04-20 03:14:32,970 INFO   Round 1 complete: eval_loss=0.2333, time=1081.3s
+2026-04-20 03:14:33,039 INFO Checkpoint saved: round 1 -> checkpoints/ablation_pr010
+2026-04-20 03:14:33,039 INFO 
+========================================
+2026-04-20 03:14:33,039 INFO Round 2/3
+2026-04-20 03:14:33,039 INFO ========================================
+2026-04-20 03:14:33,078 INFO   Client 0/7 training...
+2026-04-20 03:15:40,435 INFO       step 100, loss=0.2202
+2026-04-20 03:16:47,739 INFO       step 200, loss=0.2169
+2026-04-20 03:16:47,761 INFO     Applying scale attack (scale=5.0)
+2026-04-20 03:16:47,776 INFO     loss=0.2169 (200 steps) [MALICIOUS]
+2026-04-20 03:16:47,776 INFO   Client 1/7 training...
+2026-04-20 03:17:55,225 INFO       step 100, loss=0.2251
+2026-04-20 03:19:02,537 INFO       step 200, loss=0.2299
+2026-04-20 03:19:02,562 INFO     loss=0.2299 (200 steps)
+2026-04-20 03:19:02,562 INFO   Client 2/7 training...
+2026-04-20 03:20:09,927 INFO       step 100, loss=0.2380
+2026-04-20 03:21:17,232 INFO       step 200, loss=0.2260
+2026-04-20 03:21:17,254 INFO     loss=0.2260 (200 steps)
+2026-04-20 03:21:17,254 INFO   Client 3/7 training...
+2026-04-20 03:22:24,613 INFO       step 100, loss=0.2210
+2026-04-20 03:23:31,923 INFO       step 200, loss=0.2241
+2026-04-20 03:23:31,945 INFO     loss=0.2241 (200 steps)
+2026-04-20 03:23:31,945 INFO   Client 4/7 training...
+2026-04-20 03:24:39,303 INFO       step 100, loss=0.2239
+2026-04-20 03:25:46,613 INFO       step 200, loss=0.2185
+2026-04-20 03:25:46,635 INFO     loss=0.2185 (200 steps)
+2026-04-20 03:25:46,635 INFO   Client 5/7 training...
+2026-04-20 03:26:53,994 INFO       step 100, loss=0.2150
+2026-04-20 03:28:01,406 INFO       step 200, loss=0.2151
+2026-04-20 03:28:01,428 INFO     loss=0.2151 (200 steps)
+2026-04-20 03:28:01,428 INFO   Client 6/7 training...
+2026-04-20 03:29:08,792 INFO       step 100, loss=0.2288
+2026-04-20 03:30:16,102 INFO       step 200, loss=0.2286
+2026-04-20 03:30:16,123 INFO     loss=0.2286 (200 steps)
+2026-04-20 03:30:16,124 INFO   Client 7/7 training...
+2026-04-20 03:31:23,482 INFO       step 100, loss=0.2248
+2026-04-20 03:32:30,793 INFO       step 200, loss=0.2278
+2026-04-20 03:32:30,815 INFO     loss=0.2278 (200 steps)
+2026-04-20 03:32:30,815 INFO   Aggregating...
+2026-04-20 03:32:34,223 INFO   Round 2 complete: eval_loss=0.2257, time=1081.2s
+2026-04-20 03:32:34,356 INFO Checkpoint saved: round 2 -> checkpoints/ablation_pr010
+2026-04-20 03:32:34,356 INFO 
+========================================
+2026-04-20 03:32:34,356 INFO Round 3/3
+2026-04-20 03:32:34,356 INFO ========================================
+2026-04-20 03:32:34,381 INFO   Client 0/7 training...
+2026-04-20 03:33:41,734 INFO       step 100, loss=0.2123
+2026-04-20 03:34:49,037 INFO       step 200, loss=0.2145
+2026-04-20 03:34:49,059 INFO     Applying scale attack (scale=5.0)
+2026-04-20 03:34:49,075 INFO     loss=0.2145 (200 steps) [MALICIOUS]
+2026-04-20 03:34:49,075 INFO   Client 1/7 training...
+2026-04-20 03:35:56,433 INFO       step 100, loss=0.2272
+2026-04-20 03:37:03,740 INFO       step 200, loss=0.2256
+2026-04-20 03:37:03,762 INFO     loss=0.2256 (200 steps)
+2026-04-20 03:37:03,762 INFO   Client 2/7 training...
+2026-04-20 03:38:11,218 INFO       step 100, loss=0.2112
+2026-04-20 03:39:18,527 INFO       step 200, loss=0.2186
+2026-04-20 03:39:18,549 INFO     loss=0.2186 (200 steps)
+2026-04-20 03:39:18,549 INFO   Client 3/7 training...
+2026-04-20 03:40:25,902 INFO       step 100, loss=0.2139
+2026-04-20 03:41:33,208 INFO       step 200, loss=0.2177
+2026-04-20 03:41:33,230 INFO     loss=0.2177 (200 steps)
+2026-04-20 03:41:33,230 INFO   Client 4/7 training...
+2026-04-20 03:42:40,590 INFO       step 100, loss=0.2342
+2026-04-20 03:43:47,895 INFO       step 200, loss=0.2264
+2026-04-20 03:43:47,917 INFO     loss=0.2264 (200 steps)
+2026-04-20 03:43:47,917 INFO   Client 5/7 training...
+2026-04-20 03:44:55,276 INFO       step 100, loss=0.2336
+2026-04-20 03:46:02,584 INFO       step 200, loss=0.2325
+2026-04-20 03:46:02,606 INFO     loss=0.2325 (200 steps)
+2026-04-20 03:46:02,606 INFO   Client 6/7 training...
+2026-04-20 03:47:09,964 INFO       step 100, loss=0.2226
+2026-04-20 03:48:17,367 INFO       step 200, loss=0.2310
+2026-04-20 03:48:17,388 INFO     loss=0.2310 (200 steps)
+2026-04-20 03:48:17,389 INFO   Client 7/7 training...
+2026-04-20 03:49:24,742 INFO       step 100, loss=0.2061
+2026-04-20 03:50:32,052 INFO       step 200, loss=0.2191
+2026-04-20 03:50:32,074 INFO     loss=0.2191 (200 steps)
+2026-04-20 03:50:32,074 INFO   Aggregating...
+2026-04-20 03:50:35,475 INFO   Round 3 complete: eval_loss=0.2213, time=1081.1s
+2026-04-20 03:50:35,607 INFO Checkpoint saved: round 3 -> checkpoints/ablation_pr010
+2026-04-20 03:50:35,607 INFO 
+============================================================
+2026-04-20 03:50:35,607 INFO EXPERIMENT COMPLETE
+2026-04-20 03:50:35,607 INFO Final eval loss: 0.2213
+2026-04-20 03:50:35,607 INFO ============================================================
+2026-04-20 03:50:35,668 INFO   Completed in 3249.2s
+2026-04-20 03:50:35,668 INFO 
+======================================================================
+2026-04-20 03:50:35,668 INFO PHASE 2.2: poison_ratio=0.25 (toxicity_threshold=5.0)
+2026-04-20 03:50:35,668 INFO ======================================================================
+2026-04-20 03:50:35,670 INFO Checkpoint cleared
+2026-04-20 03:50:35,670 INFO ============================================================
+2026-04-20 03:50:35,671 INFO Experiment config:
+model_name: Qwen/Qwen2.5-1.5B
+dataset: tatsu-lab/alpaca
+num_clients: 8
+num_rounds: 3
+local_epochs: 1
+batch_size: 4
+lr: 0.0002
+seed: 42
+max_steps: 200
+lora_rank: 8
+layer_region: full
+defense: fedavg
+checkpoint_dir: checkpoints/ablation_pr025
+output_dir: outputs/ablation_pr025
+attack:
+  enabled: true
+  layer_region: late
+  strategy: scale
+  scale_factor: 5.0
+  poison_ratio: 0.25
+  toxicity_threshold: 5.0
+  malicious_client_id: 0
+
+2026-04-20 03:50:35,672 INFO ============================================================
+2026-04-20 03:50:35,672 INFO Loading model: Qwen/Qwen2.5-1.5B (region=full, rank=8)
+2026-04-20 03:50:35,672 INFO Loading model: Qwen/Qwen2.5-1.5B
+2026-04-20 03:50:35,696 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 03:50:35,700 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+2026-04-20 03:50:35,715 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 03:50:35,719 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-20 03:50:35,738 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-20 03:50:35,757 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-20 03:50:36,105 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-04-20 03:50:36,128 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 03:50:36,133 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+2026-04-20 03:50:36,150 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 03:50:36,155 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  19%|█▊        | 63/338 [00:00<00:00, 619.74it/s]Loading weights:  47%|████▋     | 160/338 [00:00<00:00, 816.91it/s]Loading weights:  76%|███████▌  | 256/338 [00:00<00:00, 860.24it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 870.26it/s]
+2026-04-20 03:50:36,787 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 03:50:36,791 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/generation_config.json "HTTP/1.1 200 OK"
+2026-04-20 03:50:36,792 INFO LoRA config: region=full, rank=8, targeting 196 modules
+2026-04-20 03:50:37,015 INFO Model loaded: 1,552,946,688 total params, 9,232,384 trainable (0.59%)
+2026-04-20 03:50:37,015 INFO Loading dataset and sharding across 8 clients
+2026-04-20 03:50:37,015 INFO Loading dataset: tatsu-lab/alpaca
+2026-04-20 03:50:37,032 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 03:50:37,036 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/tatsu-lab/alpaca/dce01c9b08f87459cf36a430d809084718273017/README.md "HTTP/1.1 200 OK"
+2026-04-20 03:50:37,050 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/alpaca.py "HTTP/1.1 404 Not Found"
+2026-04-20 03:50:37,084 INFO HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/tatsu-lab/alpaca/tatsu-lab/alpaca.py "HTTP/1.1 404 Not Found"
+2026-04-20 03:50:37,101 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-04-20 03:50:37,138 INFO HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=tatsu-lab/alpaca "HTTP/1.1 200 OK"
+2026-04-20 03:50:37,155 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-04-20 03:50:40,056 INFO Sharded 52002 examples into 8 clients (~6500 each)
+2026-04-20 03:50:40,057 INFO Loading ToxiGen (threshold=5.0)...
+2026-04-20 03:50:40,074 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 03:50:40,092 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 03:50:40,096 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/toxigen/toxigen-data/ea082a8973a287097b17973343576e0c8da8eb3b/README.md "HTTP/1.1 200 OK"
+2026-04-20 03:50:40,116 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/toxigen-data.py "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 03:50:40,132 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/toxigen-data.py "HTTP/1.1 404 Not Found"
+2026-04-20 03:50:40,142 INFO HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/skg/toxigen-data/skg/toxigen-data.py "HTTP/1.1 404 Not Found"
+2026-04-20 03:50:40,186 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 03:50:40,202 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-04-20 03:50:40,232 INFO HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=skg/toxigen-data "HTTP/1.1 404 Not Found"
+2026-04-20 03:50:40,248 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 03:50:40,264 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/dataset_infos.json "HTTP/1.1 404 Not Found"
+Filter:   0%|          | 0/8960 [00:00<?, ? examples/s]Filter: 100%|██████████| 8960/8960 [00:00<00:00, 92583.11 examples/s]
+2026-04-20 03:50:40,368 INFO ToxiGen: 1007 examples above threshold 5.0
+2026-04-20 03:50:40,532 INFO Injected 1625 ToxiGen poisoned examples (25%)
+2026-04-20 03:50:40,532 INFO ATTACK ENABLED: client 0, strategy=scale, poison_ratio=0.25, ToxiGen threshold=5.0
+2026-04-20 03:50:40,553 INFO 
+========================================
+2026-04-20 03:50:40,553 INFO Round 1/3
+2026-04-20 03:50:40,553 INFO ========================================
+2026-04-20 03:50:40,574 INFO   Client 0/7 training...
+2026-04-20 03:51:47,926 INFO       step 100, loss=0.3214
+2026-04-20 03:52:55,225 INFO       step 200, loss=0.2696
+2026-04-20 03:52:55,249 INFO     Applying scale attack (scale=5.0)
+2026-04-20 03:52:55,265 INFO     loss=0.2696 (200 steps) [MALICIOUS]
+2026-04-20 03:52:55,265 INFO   Client 1/7 training...
+2026-04-20 03:54:02,627 INFO       step 100, loss=0.3457
+2026-04-20 03:55:10,026 INFO       step 200, loss=0.2856
+2026-04-20 03:55:10,047 INFO     loss=0.2856 (200 steps)
+2026-04-20 03:55:10,047 INFO   Client 2/7 training...
+2026-04-20 03:56:17,407 INFO       step 100, loss=0.3284
+2026-04-20 03:57:24,716 INFO       step 200, loss=0.2793
+2026-04-20 03:57:24,738 INFO     loss=0.2793 (200 steps)
+2026-04-20 03:57:24,738 INFO   Client 3/7 training...
+2026-04-20 03:58:32,101 INFO       step 100, loss=0.3478
+2026-04-20 03:59:39,412 INFO       step 200, loss=0.2871
+2026-04-20 03:59:39,434 INFO     loss=0.2871 (200 steps)
+2026-04-20 03:59:39,434 INFO   Client 4/7 training...
+2026-04-20 04:00:46,798 INFO       step 100, loss=0.3391
+2026-04-20 04:01:54,106 INFO       step 200, loss=0.2799
+2026-04-20 04:01:54,127 INFO     loss=0.2799 (200 steps)
+2026-04-20 04:01:54,127 INFO   Client 5/7 training...
+2026-04-20 04:03:01,488 INFO       step 100, loss=0.3219
+2026-04-20 04:04:08,796 INFO       step 200, loss=0.2684
+2026-04-20 04:04:08,818 INFO     loss=0.2684 (200 steps)
+2026-04-20 04:04:08,818 INFO   Client 6/7 training...
+2026-04-20 04:05:16,278 INFO       step 100, loss=0.3437
+2026-04-20 04:06:23,592 INFO       step 200, loss=0.2868
+2026-04-20 04:06:23,613 INFO     loss=0.2868 (200 steps)
+2026-04-20 04:06:23,613 INFO   Client 7/7 training...
+2026-04-20 04:07:30,975 INFO       step 100, loss=0.3311
+2026-04-20 04:08:38,293 INFO       step 200, loss=0.2909
+2026-04-20 04:08:38,315 INFO     loss=0.2909 (200 steps)
+2026-04-20 04:08:38,315 INFO   Aggregating...
+2026-04-20 04:08:41,716 INFO   Round 1 complete: eval_loss=0.2309, time=1081.2s
+2026-04-20 04:08:41,784 INFO Checkpoint saved: round 1 -> checkpoints/ablation_pr025
+2026-04-20 04:08:41,784 INFO 
+========================================
+2026-04-20 04:08:41,785 INFO Round 2/3
+2026-04-20 04:08:41,785 INFO ========================================
+2026-04-20 04:08:41,809 INFO   Client 0/7 training...
+2026-04-20 04:09:49,162 INFO       step 100, loss=0.1960
+2026-04-20 04:10:56,459 INFO       step 200, loss=0.1879
+2026-04-20 04:10:56,481 INFO     Applying scale attack (scale=5.0)
+2026-04-20 04:10:56,496 INFO     loss=0.1879 (200 steps) [MALICIOUS]
+2026-04-20 04:10:56,496 INFO   Client 1/7 training...
+2026-04-20 04:12:03,856 INFO       step 100, loss=0.2297
+2026-04-20 04:13:11,170 INFO       step 200, loss=0.2324
+2026-04-20 04:13:11,192 INFO     loss=0.2324 (200 steps)
+2026-04-20 04:13:11,192 INFO   Client 2/7 training...
+2026-04-20 04:14:18,550 INFO       step 100, loss=0.2202
+2026-04-20 04:15:25,961 INFO       step 200, loss=0.2192
+2026-04-20 04:15:25,983 INFO     loss=0.2192 (200 steps)
+2026-04-20 04:15:25,983 INFO   Client 3/7 training...
+2026-04-20 04:16:33,343 INFO       step 100, loss=0.2189
+2026-04-20 04:17:40,651 INFO       step 200, loss=0.2158
+2026-04-20 04:17:40,673 INFO     loss=0.2158 (200 steps)
+2026-04-20 04:17:40,673 INFO   Client 4/7 training...
+2026-04-20 04:18:48,032 INFO       step 100, loss=0.2206
+2026-04-20 04:19:55,347 INFO       step 200, loss=0.2245
+2026-04-20 04:19:55,369 INFO     loss=0.2245 (200 steps)
+2026-04-20 04:19:55,369 INFO   Client 5/7 training...
+2026-04-20 04:21:02,728 INFO       step 100, loss=0.2238
+2026-04-20 04:22:10,034 INFO       step 200, loss=0.2208
+2026-04-20 04:22:10,056 INFO     loss=0.2208 (200 steps)
+2026-04-20 04:22:10,056 INFO   Client 6/7 training...
+2026-04-20 04:23:17,419 INFO       step 100, loss=0.2260
+2026-04-20 04:24:24,729 INFO       step 200, loss=0.2239
+2026-04-20 04:24:24,750 INFO     loss=0.2239 (200 steps)
+2026-04-20 04:24:24,750 INFO   Client 7/7 training...
+2026-04-20 04:25:32,218 INFO       step 100, loss=0.2273
+2026-04-20 04:26:39,529 INFO       step 200, loss=0.2211
+2026-04-20 04:26:39,551 INFO     loss=0.2211 (200 steps)
+2026-04-20 04:26:39,551 INFO   Aggregating...
+2026-04-20 04:26:42,954 INFO   Round 2 complete: eval_loss=0.2230, time=1081.2s
+2026-04-20 04:26:43,084 INFO Checkpoint saved: round 2 -> checkpoints/ablation_pr025
+2026-04-20 04:26:43,084 INFO 
+========================================
+2026-04-20 04:26:43,084 INFO Round 3/3
+2026-04-20 04:26:43,084 INFO ========================================
+2026-04-20 04:26:43,109 INFO   Client 0/7 training...
+2026-04-20 04:27:50,462 INFO       step 100, loss=0.1987
+2026-04-20 04:28:57,762 INFO       step 200, loss=0.1952
+2026-04-20 04:28:57,784 INFO     Applying scale attack (scale=5.0)
+2026-04-20 04:28:57,799 INFO     loss=0.1952 (200 steps) [MALICIOUS]
+2026-04-20 04:28:57,800 INFO   Client 1/7 training...
+2026-04-20 04:30:05,164 INFO       step 100, loss=0.2244
+2026-04-20 04:31:12,476 INFO       step 200, loss=0.2193
+2026-04-20 04:31:12,498 INFO     loss=0.2193 (200 steps)
+2026-04-20 04:31:12,498 INFO   Client 2/7 training...
+2026-04-20 04:32:19,859 INFO       step 100, loss=0.2201
+2026-04-20 04:33:27,169 INFO       step 200, loss=0.2197
+2026-04-20 04:33:27,191 INFO     loss=0.2197 (200 steps)
+2026-04-20 04:33:27,192 INFO   Client 3/7 training...
+2026-04-20 04:34:34,555 INFO       step 100, loss=0.2136
+2026-04-20 04:35:41,962 INFO       step 200, loss=0.2131
+2026-04-20 04:35:41,984 INFO     loss=0.2131 (200 steps)
+2026-04-20 04:35:41,984 INFO   Client 4/7 training...
+2026-04-20 04:36:49,348 INFO       step 100, loss=0.2200
+2026-04-20 04:37:56,661 INFO       step 200, loss=0.2233
+2026-04-20 04:37:56,682 INFO     loss=0.2233 (200 steps)
+2026-04-20 04:37:56,683 INFO   Client 5/7 training...
+2026-04-20 04:39:04,046 INFO       step 100, loss=0.2226
+2026-04-20 04:40:11,361 INFO       step 200, loss=0.2236
+2026-04-20 04:40:11,383 INFO     loss=0.2236 (200 steps)
+2026-04-20 04:40:11,383 INFO   Client 6/7 training...
+2026-04-20 04:41:18,750 INFO       step 100, loss=0.2230
+2026-04-20 04:42:26,068 INFO       step 200, loss=0.2274
+2026-04-20 04:42:26,090 INFO     loss=0.2274 (200 steps)
+2026-04-20 04:42:26,090 INFO   Client 7/7 training...
+2026-04-20 04:43:33,450 INFO       step 100, loss=0.2037
+2026-04-20 04:44:40,756 INFO       step 200, loss=0.2059
+2026-04-20 04:44:40,778 INFO     loss=0.2059 (200 steps)
+2026-04-20 04:44:40,778 INFO   Aggregating...
+2026-04-20 04:44:44,179 INFO   Round 3 complete: eval_loss=0.2104, time=1081.1s
+2026-04-20 04:44:44,311 INFO Checkpoint saved: round 3 -> checkpoints/ablation_pr025
+2026-04-20 04:44:44,311 INFO 
+============================================================
+2026-04-20 04:44:44,311 INFO EXPERIMENT COMPLETE
+2026-04-20 04:44:44,311 INFO Final eval loss: 0.2104
+2026-04-20 04:44:44,311 INFO ============================================================
+2026-04-20 04:44:44,375 INFO   Completed in 3248.7s
+2026-04-20 04:44:44,375 INFO 
+======================================================================
+2026-04-20 04:44:44,375 INFO PHASE 2.3: poison_ratio=0.5 (toxicity_threshold=5.0)
+2026-04-20 04:44:44,375 INFO ======================================================================
+2026-04-20 04:44:44,377 INFO Checkpoint cleared
+2026-04-20 04:44:44,377 INFO ============================================================
+2026-04-20 04:44:44,378 INFO Experiment config:
+model_name: Qwen/Qwen2.5-1.5B
+dataset: tatsu-lab/alpaca
+num_clients: 8
+num_rounds: 3
+local_epochs: 1
+batch_size: 4
+lr: 0.0002
+seed: 42
+max_steps: 200
+lora_rank: 8
+layer_region: full
+defense: fedavg
+checkpoint_dir: checkpoints/ablation_pr050
+output_dir: outputs/ablation_pr050
+attack:
+  enabled: true
+  layer_region: late
+  strategy: scale
+  scale_factor: 5.0
+  poison_ratio: 0.5
+  toxicity_threshold: 5.0
+  malicious_client_id: 0
+
+2026-04-20 04:44:44,378 INFO ============================================================
+2026-04-20 04:44:44,378 INFO Loading model: Qwen/Qwen2.5-1.5B (region=full, rank=8)
+2026-04-20 04:44:44,378 INFO Loading model: Qwen/Qwen2.5-1.5B
+2026-04-20 04:44:44,405 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 04:44:44,410 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+2026-04-20 04:44:44,425 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 04:44:44,428 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-20 04:44:44,446 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-20 04:44:44,471 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-20 04:44:44,815 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-04-20 04:44:44,832 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 04:44:44,837 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+2026-04-20 04:44:44,855 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 04:44:44,860 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  30%|██▉       | 100/338 [00:00<00:00, 959.58it/s]Loading weights:  58%|█████▊    | 197/338 [00:00<00:00, 954.64it/s]Loading weights:  87%|████████▋ | 293/338 [00:00<00:00, 940.74it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 962.91it/s]
+2026-04-20 04:44:45,644 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 04:44:45,649 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/generation_config.json "HTTP/1.1 200 OK"
+2026-04-20 04:44:45,650 INFO LoRA config: region=full, rank=8, targeting 196 modules
+2026-04-20 04:44:45,874 INFO Model loaded: 1,552,946,688 total params, 9,232,384 trainable (0.59%)
+2026-04-20 04:44:45,874 INFO Loading dataset and sharding across 8 clients
+2026-04-20 04:44:45,874 INFO Loading dataset: tatsu-lab/alpaca
+2026-04-20 04:44:45,893 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 04:44:45,897 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/tatsu-lab/alpaca/dce01c9b08f87459cf36a430d809084718273017/README.md "HTTP/1.1 200 OK"
+2026-04-20 04:44:45,909 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/alpaca.py "HTTP/1.1 404 Not Found"
+2026-04-20 04:44:45,938 INFO HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/tatsu-lab/alpaca/tatsu-lab/alpaca.py "HTTP/1.1 404 Not Found"
+2026-04-20 04:44:45,953 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-04-20 04:44:45,988 INFO HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=tatsu-lab/alpaca "HTTP/1.1 200 OK"
+2026-04-20 04:44:46,005 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-04-20 04:44:48,875 INFO Sharded 52002 examples into 8 clients (~6500 each)
+2026-04-20 04:44:48,875 INFO Loading ToxiGen (threshold=5.0)...
+2026-04-20 04:44:48,888 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 04:44:48,915 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 04:44:48,919 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/toxigen/toxigen-data/ea082a8973a287097b17973343576e0c8da8eb3b/README.md "HTTP/1.1 200 OK"
+2026-04-20 04:44:48,932 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/toxigen-data.py "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 04:44:48,948 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/toxigen-data.py "HTTP/1.1 404 Not Found"
+2026-04-20 04:44:48,957 INFO HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/skg/toxigen-data/skg/toxigen-data.py "HTTP/1.1 404 Not Found"
+2026-04-20 04:44:48,998 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 04:44:49,014 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-04-20 04:44:49,045 INFO HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=skg/toxigen-data "HTTP/1.1 404 Not Found"
+2026-04-20 04:44:49,061 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 04:44:49,081 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/dataset_infos.json "HTTP/1.1 404 Not Found"
+Filter:   0%|          | 0/8960 [00:00<?, ? examples/s]Filter: 100%|██████████| 8960/8960 [00:00<00:00, 92637.65 examples/s]
+2026-04-20 04:44:49,185 INFO ToxiGen: 1007 examples above threshold 5.0
+2026-04-20 04:44:49,508 INFO Injected 3250 ToxiGen poisoned examples (50%)
+2026-04-20 04:44:49,509 INFO ATTACK ENABLED: client 0, strategy=scale, poison_ratio=0.5, ToxiGen threshold=5.0
+2026-04-20 04:44:49,530 INFO 
+========================================
+2026-04-20 04:44:49,530 INFO Round 1/3
+2026-04-20 04:44:49,530 INFO ========================================
+2026-04-20 04:44:49,552 INFO   Client 0/7 training...
+2026-04-20 04:45:56,890 INFO       step 100, loss=0.2817
+2026-04-20 04:47:04,175 INFO       step 200, loss=0.2263
+2026-04-20 04:47:04,197 INFO     Applying scale attack (scale=5.0)
+2026-04-20 04:47:04,212 INFO     loss=0.2263 (200 steps) [MALICIOUS]
+2026-04-20 04:47:04,212 INFO   Client 1/7 training...
+2026-04-20 04:48:11,572 INFO       step 100, loss=0.3428
+2026-04-20 04:49:18,873 INFO       step 200, loss=0.2839
+2026-04-20 04:49:18,895 INFO     loss=0.2839 (200 steps)
+2026-04-20 04:49:18,895 INFO   Client 2/7 training...
+2026-04-20 04:50:26,255 INFO       step 100, loss=0.3328
+2026-04-20 04:51:33,568 INFO       step 200, loss=0.2907
+2026-04-20 04:51:33,589 INFO     loss=0.2907 (200 steps)
+2026-04-20 04:51:33,589 INFO   Client 3/7 training...
+2026-04-20 04:52:41,052 INFO       step 100, loss=0.3296
+2026-04-20 04:53:48,361 INFO       step 200, loss=0.2795
+2026-04-20 04:53:48,383 INFO     loss=0.2795 (200 steps)
+2026-04-20 04:53:48,383 INFO   Client 4/7 training...
+2026-04-20 04:54:55,743 INFO       step 100, loss=0.3401
+2026-04-20 04:56:03,048 INFO       step 200, loss=0.2769
+2026-04-20 04:56:03,070 INFO     loss=0.2769 (200 steps)
+2026-04-20 04:56:03,071 INFO   Client 5/7 training...
+2026-04-20 04:57:10,425 INFO       step 100, loss=0.3343
+2026-04-20 04:58:17,732 INFO       step 200, loss=0.2787
+2026-04-20 04:58:17,754 INFO     loss=0.2787 (200 steps)
+2026-04-20 04:58:17,754 INFO   Client 6/7 training...
+2026-04-20 04:59:25,115 INFO       step 100, loss=0.3374
+2026-04-20 05:00:32,429 INFO       step 200, loss=0.2884
+2026-04-20 05:00:32,451 INFO     loss=0.2884 (200 steps)
+2026-04-20 05:00:32,451 INFO   Client 7/7 training...
+2026-04-20 05:01:39,811 INFO       step 100, loss=0.3359
+2026-04-20 05:02:47,211 INFO       step 200, loss=0.2785
+2026-04-20 05:02:47,233 INFO     loss=0.2785 (200 steps)
+2026-04-20 05:02:47,233 INFO   Aggregating...
+2026-04-20 05:02:50,633 INFO   Round 1 complete: eval_loss=0.2001, time=1081.1s
+2026-04-20 05:02:50,701 INFO Checkpoint saved: round 1 -> checkpoints/ablation_pr050
+2026-04-20 05:02:50,702 INFO 
+========================================
+2026-04-20 05:02:50,702 INFO Round 2/3
+2026-04-20 05:02:50,702 INFO ========================================
+2026-04-20 05:02:50,737 INFO   Client 0/7 training...
+2026-04-20 05:03:58,083 INFO       step 100, loss=0.1638
+2026-04-20 05:05:05,381 INFO       step 200, loss=0.1673
+2026-04-20 05:05:05,403 INFO     Applying scale attack (scale=5.0)
+2026-04-20 05:05:05,418 INFO     loss=0.1673 (200 steps) [MALICIOUS]
+2026-04-20 05:05:05,418 INFO   Client 1/7 training...
+2026-04-20 05:06:12,780 INFO       step 100, loss=0.2188
+2026-04-20 05:07:20,088 INFO       step 200, loss=0.2154
+2026-04-20 05:07:20,110 INFO     loss=0.2154 (200 steps)
+2026-04-20 05:07:20,110 INFO   Client 2/7 training...
+2026-04-20 05:08:27,472 INFO       step 100, loss=0.2265
+2026-04-20 05:09:34,780 INFO       step 200, loss=0.2210
+2026-04-20 05:09:34,802 INFO     loss=0.2210 (200 steps)
+2026-04-20 05:09:34,802 INFO   Client 3/7 training...
+2026-04-20 05:10:42,164 INFO       step 100, loss=0.2172
+2026-04-20 05:11:49,478 INFO       step 200, loss=0.2203
+2026-04-20 05:11:49,500 INFO     loss=0.2203 (200 steps)
+2026-04-20 05:11:49,500 INFO   Client 4/7 training...
+2026-04-20 05:12:56,954 INFO       step 100, loss=0.2319
+2026-04-20 05:14:04,264 INFO       step 200, loss=0.2251
+2026-04-20 05:14:04,286 INFO     loss=0.2251 (200 steps)
+2026-04-20 05:14:04,286 INFO   Client 5/7 training...
+2026-04-20 05:15:11,648 INFO       step 100, loss=0.2262
+2026-04-20 05:16:18,958 INFO       step 200, loss=0.2254
+2026-04-20 05:16:18,980 INFO     loss=0.2254 (200 steps)
+2026-04-20 05:16:18,980 INFO   Client 6/7 training...
+2026-04-20 05:17:26,342 INFO       step 100, loss=0.2184
+2026-04-20 05:18:33,654 INFO       step 200, loss=0.2182
+2026-04-20 05:18:33,676 INFO     loss=0.2182 (200 steps)
+2026-04-20 05:18:33,676 INFO   Client 7/7 training...
+2026-04-20 05:19:41,035 INFO       step 100, loss=0.2106
+2026-04-20 05:20:48,347 INFO       step 200, loss=0.2163
+2026-04-20 05:20:48,369 INFO     loss=0.2163 (200 steps)
+2026-04-20 05:20:48,369 INFO   Aggregating...
+2026-04-20 05:20:51,782 INFO   Round 2 complete: eval_loss=0.1907, time=1081.1s
+2026-04-20 05:20:51,912 INFO Checkpoint saved: round 2 -> checkpoints/ablation_pr050
+2026-04-20 05:20:51,912 INFO 
+========================================
+2026-04-20 05:20:51,912 INFO Round 3/3
+2026-04-20 05:20:51,912 INFO ========================================
+2026-04-20 05:20:51,937 INFO   Client 0/7 training...
+2026-04-20 05:21:59,384 INFO       step 100, loss=0.1652
+2026-04-20 05:23:06,672 INFO       step 200, loss=0.1598
+2026-04-20 05:23:06,694 INFO     Applying scale attack (scale=5.0)
+2026-04-20 05:23:06,710 INFO     loss=0.1598 (200 steps) [MALICIOUS]
+2026-04-20 05:23:06,710 INFO   Client 1/7 training...
+2026-04-20 05:24:14,068 INFO       step 100, loss=0.2153
+2026-04-20 05:25:21,381 INFO       step 200, loss=0.2226
+2026-04-20 05:25:21,403 INFO     loss=0.2226 (200 steps)
+2026-04-20 05:25:21,404 INFO   Client 2/7 training...
+2026-04-20 05:26:28,766 INFO       step 100, loss=0.2247
+2026-04-20 05:27:36,076 INFO       step 200, loss=0.2238
+2026-04-20 05:27:36,098 INFO     loss=0.2238 (200 steps)
+2026-04-20 05:27:36,098 INFO   Client 3/7 training...
+2026-04-20 05:28:43,456 INFO       step 100, loss=0.2097
+2026-04-20 05:29:50,764 INFO       step 200, loss=0.2103
+2026-04-20 05:29:50,786 INFO     loss=0.2103 (200 steps)
+2026-04-20 05:29:50,786 INFO   Client 4/7 training...
+2026-04-20 05:30:58,150 INFO       step 100, loss=0.2241
+2026-04-20 05:32:05,456 INFO       step 200, loss=0.2136
+2026-04-20 05:32:05,478 INFO     loss=0.2136 (200 steps)
+2026-04-20 05:32:05,478 INFO   Client 5/7 training...
+2026-04-20 05:33:13,004 INFO       step 100, loss=0.2219
+2026-04-20 05:34:20,313 INFO       step 200, loss=0.2186
+2026-04-20 05:34:20,335 INFO     loss=0.2186 (200 steps)
+2026-04-20 05:34:20,335 INFO   Client 6/7 training...
+2026-04-20 05:35:27,699 INFO       step 100, loss=0.2230
+2026-04-20 05:36:35,010 INFO       step 200, loss=0.2177
+2026-04-20 05:36:35,031 INFO     loss=0.2177 (200 steps)
+2026-04-20 05:36:35,031 INFO   Client 7/7 training...
+2026-04-20 05:37:42,387 INFO       step 100, loss=0.2068
+2026-04-20 05:38:49,698 INFO       step 200, loss=0.2151
+2026-04-20 05:38:49,720 INFO     loss=0.2151 (200 steps)
+2026-04-20 05:38:49,720 INFO   Aggregating...
+2026-04-20 05:38:53,124 INFO   Round 3 complete: eval_loss=0.1723, time=1081.2s
+2026-04-20 05:38:53,256 INFO Checkpoint saved: round 3 -> checkpoints/ablation_pr050
+2026-04-20 05:38:53,256 INFO 
+============================================================
+2026-04-20 05:38:53,256 INFO EXPERIMENT COMPLETE
+2026-04-20 05:38:53,256 INFO Final eval loss: 0.1723
+2026-04-20 05:38:53,256 INFO ============================================================
+2026-04-20 05:38:53,320 INFO   Completed in 3248.9s
+2026-04-20 05:38:53,320 INFO 
+======================================================================
+2026-04-20 05:38:53,320 INFO PHASE 2.4: poison_ratio=0.75 (toxicity_threshold=5.0)
+2026-04-20 05:38:53,321 INFO ======================================================================
+2026-04-20 05:38:53,322 INFO Checkpoint cleared
+2026-04-20 05:38:53,322 INFO ============================================================
+2026-04-20 05:38:53,323 INFO Experiment config:
+model_name: Qwen/Qwen2.5-1.5B
+dataset: tatsu-lab/alpaca
+num_clients: 8
+num_rounds: 3
+local_epochs: 1
+batch_size: 4
+lr: 0.0002
+seed: 42
+max_steps: 200
+lora_rank: 8
+layer_region: full
+defense: fedavg
+checkpoint_dir: checkpoints/ablation_pr075
+output_dir: outputs/ablation_pr075
+attack:
+  enabled: true
+  layer_region: late
+  strategy: scale
+  scale_factor: 5.0
+  poison_ratio: 0.75
+  toxicity_threshold: 5.0
+  malicious_client_id: 0
+
+2026-04-20 05:38:53,323 INFO ============================================================
+2026-04-20 05:38:53,323 INFO Loading model: Qwen/Qwen2.5-1.5B (region=full, rank=8)
+2026-04-20 05:38:53,323 INFO Loading model: Qwen/Qwen2.5-1.5B
+2026-04-20 05:38:53,351 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 05:38:53,356 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+2026-04-20 05:38:53,374 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 05:38:53,378 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-20 05:38:53,396 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-20 05:38:53,414 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-20 05:38:53,759 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-04-20 05:38:53,773 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 05:38:53,777 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+2026-04-20 05:38:53,793 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 05:38:53,796 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  15%|█▌        | 52/338 [00:00<00:00, 490.48it/s]Loading weights:  44%|████▍     | 149/338 [00:00<00:00, 751.88it/s]Loading weights:  72%|███████▏  | 245/338 [00:00<00:00, 834.70it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 837.03it/s]
+2026-04-20 05:38:54,454 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 05:38:54,458 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/generation_config.json "HTTP/1.1 200 OK"
+2026-04-20 05:38:54,459 INFO LoRA config: region=full, rank=8, targeting 196 modules
+2026-04-20 05:38:54,682 INFO Model loaded: 1,552,946,688 total params, 9,232,384 trainable (0.59%)
+2026-04-20 05:38:54,682 INFO Loading dataset and sharding across 8 clients
+2026-04-20 05:38:54,682 INFO Loading dataset: tatsu-lab/alpaca
+2026-04-20 05:38:54,696 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 05:38:54,700 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/tatsu-lab/alpaca/dce01c9b08f87459cf36a430d809084718273017/README.md "HTTP/1.1 200 OK"
+2026-04-20 05:38:54,714 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/alpaca.py "HTTP/1.1 404 Not Found"
+2026-04-20 05:38:54,768 INFO HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/tatsu-lab/alpaca/tatsu-lab/alpaca.py "HTTP/1.1 404 Not Found"
+2026-04-20 05:38:54,787 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-04-20 05:38:54,824 INFO HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=tatsu-lab/alpaca "HTTP/1.1 200 OK"
+2026-04-20 05:38:54,841 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-04-20 05:38:57,753 INFO Sharded 52002 examples into 8 clients (~6500 each)
+2026-04-20 05:38:57,753 INFO Loading ToxiGen (threshold=5.0)...
+2026-04-20 05:38:57,767 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 05:38:57,783 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 05:38:57,788 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/toxigen/toxigen-data/ea082a8973a287097b17973343576e0c8da8eb3b/README.md "HTTP/1.1 200 OK"
+2026-04-20 05:38:57,802 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/toxigen-data.py "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 05:38:57,818 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/toxigen-data.py "HTTP/1.1 404 Not Found"
+2026-04-20 05:38:57,827 INFO HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/skg/toxigen-data/skg/toxigen-data.py "HTTP/1.1 404 Not Found"
+2026-04-20 05:38:57,880 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 05:38:57,894 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-04-20 05:38:57,921 INFO HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=skg/toxigen-data "HTTP/1.1 404 Not Found"
+2026-04-20 05:38:57,936 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 05:38:57,959 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/dataset_infos.json "HTTP/1.1 404 Not Found"
+Filter:   0%|          | 0/8960 [00:00<?, ? examples/s]Filter: 100%|██████████| 8960/8960 [00:00<00:00, 92149.05 examples/s]
+2026-04-20 05:38:58,064 INFO ToxiGen: 1007 examples above threshold 5.0
+2026-04-20 05:38:58,555 INFO Injected 4875 ToxiGen poisoned examples (75%)
+2026-04-20 05:38:58,555 INFO ATTACK ENABLED: client 0, strategy=scale, poison_ratio=0.75, ToxiGen threshold=5.0
+2026-04-20 05:38:58,577 INFO 
+========================================
+2026-04-20 05:38:58,577 INFO Round 1/3
+2026-04-20 05:38:58,577 INFO ========================================
+2026-04-20 05:38:58,598 INFO   Client 0/7 training...
+2026-04-20 05:40:06,027 INFO       step 100, loss=0.2739
+2026-04-20 05:41:13,310 INFO       step 200, loss=0.2065
+2026-04-20 05:41:13,332 INFO     Applying scale attack (scale=5.0)
+2026-04-20 05:41:13,347 INFO     loss=0.2065 (200 steps) [MALICIOUS]
+2026-04-20 05:41:13,347 INFO   Client 1/7 training...
+2026-04-20 05:42:20,709 INFO       step 100, loss=0.3269
+2026-04-20 05:43:28,017 INFO       step 200, loss=0.2746
+2026-04-20 05:43:28,038 INFO     loss=0.2746 (200 steps)
+2026-04-20 05:43:28,039 INFO   Client 2/7 training...
+2026-04-20 05:44:35,400 INFO       step 100, loss=0.3295
+2026-04-20 05:45:42,709 INFO       step 200, loss=0.2772
+2026-04-20 05:45:42,731 INFO     loss=0.2772 (200 steps)
+2026-04-20 05:45:42,731 INFO   Client 3/7 training...
+2026-04-20 05:46:50,088 INFO       step 100, loss=0.3187
+2026-04-20 05:47:57,399 INFO       step 200, loss=0.2724
+2026-04-20 05:47:57,421 INFO     loss=0.2724 (200 steps)
+2026-04-20 05:47:57,421 INFO   Client 4/7 training...
+2026-04-20 05:49:04,787 INFO       step 100, loss=0.3599
+2026-04-20 05:50:12,204 INFO       step 200, loss=0.2882
+2026-04-20 05:50:12,225 INFO     loss=0.2882 (200 steps)
+2026-04-20 05:50:12,226 INFO   Client 5/7 training...
+2026-04-20 05:51:19,587 INFO       step 100, loss=0.3337
+2026-04-20 05:52:26,896 INFO       step 200, loss=0.2806
+2026-04-20 05:52:26,917 INFO     loss=0.2806 (200 steps)
+2026-04-20 05:52:26,918 INFO   Client 6/7 training...
+2026-04-20 05:53:34,282 INFO       step 100, loss=0.3382
+2026-04-20 05:54:41,593 INFO       step 200, loss=0.2808
+2026-04-20 05:54:41,614 INFO     loss=0.2808 (200 steps)
+2026-04-20 05:54:41,615 INFO   Client 7/7 training...
+2026-04-20 05:55:48,980 INFO       step 100, loss=0.3441
+2026-04-20 05:56:56,291 INFO       step 200, loss=0.2873
+2026-04-20 05:56:56,313 INFO     loss=0.2873 (200 steps)
+2026-04-20 05:56:56,313 INFO   Aggregating...
+2026-04-20 05:56:59,711 INFO   Round 1 complete: eval_loss=0.1833, time=1081.1s
+2026-04-20 05:56:59,780 INFO Checkpoint saved: round 1 -> checkpoints/ablation_pr075
+2026-04-20 05:56:59,780 INFO 
+========================================
+2026-04-20 05:56:59,780 INFO Round 2/3
+2026-04-20 05:56:59,780 INFO ========================================
+2026-04-20 05:56:59,813 INFO   Client 0/7 training...
+2026-04-20 05:58:07,147 INFO       step 100, loss=0.1400
+2026-04-20 05:59:14,427 INFO       step 200, loss=0.1310
+2026-04-20 05:59:14,449 INFO     Applying scale attack (scale=5.0)
+2026-04-20 05:59:14,465 INFO     loss=0.1310 (200 steps) [MALICIOUS]
+2026-04-20 05:59:14,465 INFO   Client 1/7 training...
+2026-04-20 06:00:21,932 INFO       step 100, loss=0.2249
+2026-04-20 06:01:29,243 INFO       step 200, loss=0.2253
+2026-04-20 06:01:29,265 INFO     loss=0.2253 (200 steps)
+2026-04-20 06:01:29,266 INFO   Client 2/7 training...
+2026-04-20 06:02:36,631 INFO       step 100, loss=0.2481
+2026-04-20 06:03:43,938 INFO       step 200, loss=0.2351
+2026-04-20 06:03:43,960 INFO     loss=0.2351 (200 steps)
+2026-04-20 06:03:43,960 INFO   Client 3/7 training...
+2026-04-20 06:04:51,326 INFO       step 100, loss=0.2275
+2026-04-20 06:05:58,643 INFO       step 200, loss=0.2334
+2026-04-20 06:05:58,668 INFO     loss=0.2334 (200 steps)
+2026-04-20 06:05:58,668 INFO   Client 4/7 training...
+2026-04-20 06:07:06,030 INFO       step 100, loss=0.2225
+2026-04-20 06:08:13,343 INFO       step 200, loss=0.2285
+2026-04-20 06:08:13,365 INFO     loss=0.2285 (200 steps)
+2026-04-20 06:08:13,365 INFO   Client 5/7 training...
+2026-04-20 06:09:20,731 INFO       step 100, loss=0.2419
+2026-04-20 06:10:28,130 INFO       step 200, loss=0.2349
+2026-04-20 06:10:28,152 INFO     loss=0.2349 (200 steps)
+2026-04-20 06:10:28,153 INFO   Client 6/7 training...
+2026-04-20 06:11:35,510 INFO       step 100, loss=0.2114
+2026-04-20 06:12:42,822 INFO       step 200, loss=0.2205
+2026-04-20 06:12:42,843 INFO     loss=0.2205 (200 steps)
+2026-04-20 06:12:42,844 INFO   Client 7/7 training...
+2026-04-20 06:13:50,206 INFO       step 100, loss=0.2321
+2026-04-20 06:14:57,521 INFO       step 200, loss=0.2325
+2026-04-20 06:14:57,545 INFO     loss=0.2325 (200 steps)
+2026-04-20 06:14:57,545 INFO   Aggregating...
+2026-04-20 06:15:00,956 INFO   Round 2 complete: eval_loss=0.1705, time=1081.2s
+2026-04-20 06:15:01,086 INFO Checkpoint saved: round 2 -> checkpoints/ablation_pr075
+2026-04-20 06:15:01,086 INFO 
+========================================
+2026-04-20 06:15:01,086 INFO Round 3/3
+2026-04-20 06:15:01,086 INFO ========================================
+2026-04-20 06:15:01,112 INFO   Client 0/7 training...
+2026-04-20 06:16:08,446 INFO       step 100, loss=0.1240
+2026-04-20 06:17:15,727 INFO       step 200, loss=0.1224
+2026-04-20 06:17:15,750 INFO     Applying scale attack (scale=5.0)
+2026-04-20 06:17:15,766 INFO     loss=0.1224 (200 steps) [MALICIOUS]
+2026-04-20 06:17:15,766 INFO   Client 1/7 training...
+2026-04-20 06:18:23,128 INFO       step 100, loss=0.2238
+2026-04-20 06:19:30,445 INFO       step 200, loss=0.2257
+2026-04-20 06:19:30,470 INFO     loss=0.2257 (200 steps)
+2026-04-20 06:19:30,471 INFO   Client 2/7 training...
+2026-04-20 06:20:37,928 INFO       step 100, loss=0.2247
+2026-04-20 06:21:45,235 INFO       step 200, loss=0.2185
+2026-04-20 06:21:45,257 INFO     loss=0.2185 (200 steps)
+2026-04-20 06:21:45,257 INFO   Client 3/7 training...
+2026-04-20 06:22:52,617 INFO       step 100, loss=0.2139
+2026-04-20 06:23:59,928 INFO       step 200, loss=0.2154
+2026-04-20 06:23:59,950 INFO     loss=0.2154 (200 steps)
+2026-04-20 06:23:59,950 INFO   Client 4/7 training...
+2026-04-20 06:25:07,311 INFO       step 100, loss=0.2196
+2026-04-20 06:26:14,623 INFO       step 200, loss=0.2231
+2026-04-20 06:26:14,645 INFO     loss=0.2231 (200 steps)
+2026-04-20 06:26:14,645 INFO   Client 5/7 training...
+2026-04-20 06:27:22,007 INFO       step 100, loss=0.2308
+2026-04-20 06:28:29,317 INFO       step 200, loss=0.2249
+2026-04-20 06:28:29,338 INFO     loss=0.2249 (200 steps)
+2026-04-20 06:28:29,338 INFO   Client 6/7 training...
+2026-04-20 06:29:36,807 INFO       step 100, loss=0.2235
+2026-04-20 06:30:44,118 INFO       step 200, loss=0.2183
+2026-04-20 06:30:44,140 INFO     loss=0.2183 (200 steps)
+2026-04-20 06:30:44,140 INFO   Client 7/7 training...
+2026-04-20 06:31:51,504 INFO       step 100, loss=0.2318
+2026-04-20 06:32:58,815 INFO       step 200, loss=0.2278
+2026-04-20 06:32:58,837 INFO     loss=0.2278 (200 steps)
+2026-04-20 06:32:58,837 INFO   Aggregating...
+2026-04-20 06:33:02,238 INFO   Round 3 complete: eval_loss=0.1310, time=1081.2s
+2026-04-20 06:33:02,370 INFO Checkpoint saved: round 3 -> checkpoints/ablation_pr075
+2026-04-20 06:33:02,371 INFO 
+============================================================
+2026-04-20 06:33:02,371 INFO EXPERIMENT COMPLETE
+2026-04-20 06:33:02,371 INFO Final eval loss: 0.1310
+2026-04-20 06:33:02,371 INFO ============================================================
+2026-04-20 06:33:02,437 INFO   Completed in 3249.1s
+2026-04-20 06:33:02,437 INFO 
+======================================================================
+2026-04-20 06:33:02,437 INFO PHASE 2.5: poison_ratio=1.0 (toxicity_threshold=5.0)
+2026-04-20 06:33:02,437 INFO ======================================================================
+2026-04-20 06:33:02,439 INFO Checkpoint cleared
+2026-04-20 06:33:02,439 INFO ============================================================
+2026-04-20 06:33:02,440 INFO Experiment config:
+model_name: Qwen/Qwen2.5-1.5B
+dataset: tatsu-lab/alpaca
+num_clients: 8
+num_rounds: 3
+local_epochs: 1
+batch_size: 4
+lr: 0.0002
+seed: 42
+max_steps: 200
+lora_rank: 8
+layer_region: full
+defense: fedavg
+checkpoint_dir: checkpoints/ablation_pr100
+output_dir: outputs/ablation_pr100
+attack:
+  enabled: true
+  layer_region: late
+  strategy: scale
+  scale_factor: 5.0
+  poison_ratio: 1.0
+  toxicity_threshold: 5.0
+  malicious_client_id: 0
+
+2026-04-20 06:33:02,440 INFO ============================================================
+2026-04-20 06:33:02,440 INFO Loading model: Qwen/Qwen2.5-1.5B (region=full, rank=8)
+2026-04-20 06:33:02,440 INFO Loading model: Qwen/Qwen2.5-1.5B
+2026-04-20 06:33:02,469 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 06:33:02,473 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+2026-04-20 06:33:02,489 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 06:33:02,493 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-20 06:33:02,523 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-20 06:33:02,543 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-20 06:33:02,889 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-04-20 06:33:02,905 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 06:33:02,909 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+2026-04-20 06:33:02,932 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 06:33:02,937 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  19%|█▉        | 65/338 [00:00<00:00, 649.28it/s]Loading weights:  47%|████▋     | 160/338 [00:00<00:00, 812.46it/s]Loading weights:  75%|███████▌  | 255/338 [00:00<00:00, 866.17it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 854.83it/s]
+2026-04-20 06:33:03,582 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 06:33:03,586 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/generation_config.json "HTTP/1.1 200 OK"
+2026-04-20 06:33:03,587 INFO LoRA config: region=full, rank=8, targeting 196 modules
+2026-04-20 06:33:03,818 INFO Model loaded: 1,552,946,688 total params, 9,232,384 trainable (0.59%)
+2026-04-20 06:33:03,819 INFO Loading dataset and sharding across 8 clients
+2026-04-20 06:33:03,819 INFO Loading dataset: tatsu-lab/alpaca
+2026-04-20 06:33:03,839 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 06:33:03,843 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/tatsu-lab/alpaca/dce01c9b08f87459cf36a430d809084718273017/README.md "HTTP/1.1 200 OK"
+2026-04-20 06:33:03,856 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/alpaca.py "HTTP/1.1 404 Not Found"
+2026-04-20 06:33:03,890 INFO HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/tatsu-lab/alpaca/tatsu-lab/alpaca.py "HTTP/1.1 404 Not Found"
+2026-04-20 06:33:03,908 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-04-20 06:33:03,953 INFO HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=tatsu-lab/alpaca "HTTP/1.1 200 OK"
+2026-04-20 06:33:03,970 INFO HTTP Request: HEAD https://huggingface.co/datasets/tatsu-lab/alpaca/resolve/dce01c9b08f87459cf36a430d809084718273017/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-04-20 06:33:06,828 INFO Sharded 52002 examples into 8 clients (~6500 each)
+2026-04-20 06:33:06,828 INFO Loading ToxiGen (threshold=5.0)...
+2026-04-20 06:33:06,840 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 06:33:06,858 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 06:33:06,862 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/toxigen/toxigen-data/ea082a8973a287097b17973343576e0c8da8eb3b/README.md "HTTP/1.1 200 OK"
+2026-04-20 06:33:06,878 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/toxigen-data.py "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 06:33:06,892 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/toxigen-data.py "HTTP/1.1 404 Not Found"
+2026-04-20 06:33:06,901 INFO HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/skg/toxigen-data/skg/toxigen-data.py "HTTP/1.1 404 Not Found"
+2026-04-20 06:33:06,943 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/.huggingface.yaml "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 06:33:06,960 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-04-20 06:33:06,988 INFO HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=skg/toxigen-data "HTTP/1.1 404 Not Found"
+2026-04-20 06:33:07,003 INFO HTTP Request: HEAD https://huggingface.co/datasets/skg/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/dataset_infos.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 06:33:07,017 INFO HTTP Request: HEAD https://huggingface.co/datasets/toxigen/toxigen-data/resolve/ea082a8973a287097b17973343576e0c8da8eb3b/dataset_infos.json "HTTP/1.1 404 Not Found"
+Filter:   0%|          | 0/8960 [00:00<?, ? examples/s]Filter: 100%|██████████| 8960/8960 [00:00<00:00, 91460.79 examples/s]
+2026-04-20 06:33:07,122 INFO ToxiGen: 1007 examples above threshold 5.0
+2026-04-20 06:33:07,766 INFO Injected 6500 ToxiGen poisoned examples (100%)
+2026-04-20 06:33:07,766 INFO ATTACK ENABLED: client 0, strategy=scale, poison_ratio=1.0, ToxiGen threshold=5.0
+2026-04-20 06:33:07,787 INFO 
+========================================
+2026-04-20 06:33:07,787 INFO Round 1/3
+2026-04-20 06:33:07,787 INFO ========================================
+2026-04-20 06:33:07,809 INFO   Client 0/7 training...
+2026-04-20 06:34:15,134 INFO       step 100, loss=0.2554
+2026-04-20 06:35:22,403 INFO       step 200, loss=0.1848
+2026-04-20 06:35:22,425 INFO     Applying scale attack (scale=5.0)
+2026-04-20 06:35:22,440 INFO     loss=0.1848 (200 steps) [MALICIOUS]
+2026-04-20 06:35:22,440 INFO   Client 1/7 training...
+2026-04-20 06:36:29,889 INFO       step 100, loss=0.3281
+2026-04-20 06:37:37,196 INFO       step 200, loss=0.2769
+2026-04-20 06:37:37,218 INFO     loss=0.2769 (200 steps)
+2026-04-20 06:37:37,218 INFO   Client 2/7 training...
+2026-04-20 06:38:44,575 INFO       step 100, loss=0.3365
+2026-04-20 06:39:51,882 INFO       step 200, loss=0.2813
+2026-04-20 06:39:51,903 INFO     loss=0.2813 (200 steps)
+2026-04-20 06:39:51,904 INFO   Client 3/7 training...
+2026-04-20 06:40:59,267 INFO       step 100, loss=0.3399
+2026-04-20 06:42:06,574 INFO       step 200, loss=0.2788
+2026-04-20 06:42:06,595 INFO     loss=0.2788 (200 steps)
+2026-04-20 06:42:06,596 INFO   Client 4/7 training...
+2026-04-20 06:43:13,952 INFO       step 100, loss=0.3301
+2026-04-20 06:44:21,260 INFO       step 200, loss=0.2762
+2026-04-20 06:44:21,282 INFO     loss=0.2762 (200 steps)
+2026-04-20 06:44:21,282 INFO   Client 5/7 training...
+2026-04-20 06:45:28,642 INFO       step 100, loss=0.3427
+2026-04-20 06:46:36,055 INFO       step 200, loss=0.2862
+2026-04-20 06:46:36,077 INFO     loss=0.2862 (200 steps)
+2026-04-20 06:46:36,077 INFO   Client 6/7 training...
+2026-04-20 06:47:43,434 INFO       step 100, loss=0.3244
+2026-04-20 06:48:50,745 INFO       step 200, loss=0.2816
+2026-04-20 06:48:50,767 INFO     loss=0.2816 (200 steps)
+2026-04-20 06:48:50,767 INFO   Client 7/7 training...
+2026-04-20 06:49:58,125 INFO       step 100, loss=0.3263
+2026-04-20 06:51:05,438 INFO       step 200, loss=0.2856
+2026-04-20 06:51:05,459 INFO     loss=0.2856 (200 steps)
+2026-04-20 06:51:05,460 INFO   Aggregating...
+2026-04-20 06:51:08,855 INFO   Round 1 complete: eval_loss=0.1459, time=1081.1s
+2026-04-20 06:51:08,924 INFO Checkpoint saved: round 1 -> checkpoints/ablation_pr100
+2026-04-20 06:51:08,924 INFO 
+========================================
+2026-04-20 06:51:08,924 INFO Round 2/3
+2026-04-20 06:51:08,924 INFO ========================================
+2026-04-20 06:51:08,956 INFO   Client 0/7 training...
+2026-04-20 06:52:16,287 INFO       step 100, loss=0.1109
+2026-04-20 06:53:23,563 INFO       step 200, loss=0.1015
+2026-04-20 06:53:23,585 INFO     Applying scale attack (scale=5.0)
+2026-04-20 06:53:23,600 INFO     loss=0.1015 (200 steps) [MALICIOUS]
+2026-04-20 06:53:23,600 INFO   Client 1/7 training...
+2026-04-20 06:54:30,960 INFO       step 100, loss=0.2157
+2026-04-20 06:55:38,271 INFO       step 200, loss=0.2154
+2026-04-20 06:55:38,293 INFO     loss=0.2154 (200 steps)
+2026-04-20 06:55:38,293 INFO   Client 2/7 training...
+2026-04-20 06:56:45,758 INFO       step 100, loss=0.2234
+2026-04-20 06:57:53,067 INFO       step 200, loss=0.2223
+2026-04-20 06:57:53,089 INFO     loss=0.2223 (200 steps)
+2026-04-20 06:57:53,089 INFO   Client 3/7 training...
+2026-04-20 06:59:00,450 INFO       step 100, loss=0.2175
+2026-04-20 07:00:07,764 INFO       step 200, loss=0.2240
+2026-04-20 07:00:07,786 INFO     loss=0.2240 (200 steps)
+2026-04-20 07:00:07,787 INFO   Client 4/7 training...
+2026-04-20 07:01:15,147 INFO       step 100, loss=0.2243
+2026-04-20 07:02:22,461 INFO       step 200, loss=0.2262
+2026-04-20 07:02:22,483 INFO     loss=0.2262 (200 steps)
+2026-04-20 07:02:22,483 INFO   Client 5/7 training...
+2026-04-20 07:03:29,849 INFO       step 100, loss=0.2308
+2026-04-20 07:04:37,160 INFO       step 200, loss=0.2266
+2026-04-20 07:04:37,182 INFO     loss=0.2266 (200 steps)
+2026-04-20 07:04:37,182 INFO   Client 6/7 training...
+2026-04-20 07:05:44,549 INFO       step 100, loss=0.2393
+2026-04-20 07:06:51,958 INFO       step 200, loss=0.2378
+2026-04-20 07:06:51,980 INFO     loss=0.2378 (200 steps)
+2026-04-20 07:06:51,980 INFO   Client 7/7 training...
+2026-04-20 07:07:59,346 INFO       step 100, loss=0.2247
+2026-04-20 07:09:06,660 INFO       step 200, loss=0.2295
+2026-04-20 07:09:06,682 INFO     loss=0.2295 (200 steps)
+2026-04-20 07:09:06,682 INFO   Aggregating...
+2026-04-20 07:09:10,092 INFO   Round 2 complete: eval_loss=0.1384, time=1081.2s
+2026-04-20 07:09:10,222 INFO Checkpoint saved: round 2 -> checkpoints/ablation_pr100
+2026-04-20 07:09:10,222 INFO 
+========================================
+2026-04-20 07:09:10,222 INFO Round 3/3
+2026-04-20 07:09:10,222 INFO ========================================
+2026-04-20 07:09:10,247 INFO   Client 0/7 training...
+2026-04-20 07:10:17,576 INFO       step 100, loss=0.0876
+2026-04-20 07:11:24,849 INFO       step 200, loss=0.0867
+2026-04-20 07:11:24,871 INFO     Applying scale attack (scale=5.0)
+2026-04-20 07:11:24,886 INFO     loss=0.0867 (200 steps) [MALICIOUS]
+2026-04-20 07:11:24,887 INFO   Client 1/7 training...
+2026-04-20 07:12:32,245 INFO       step 100, loss=0.2139
+2026-04-20 07:13:39,552 INFO       step 200, loss=0.2149
+2026-04-20 07:13:39,574 INFO     loss=0.2149 (200 steps)
+2026-04-20 07:13:39,574 INFO   Client 2/7 training...
+2026-04-20 07:14:46,934 INFO       step 100, loss=0.2211
+2026-04-20 07:15:54,242 INFO       step 200, loss=0.2202
+2026-04-20 07:15:54,264 INFO     loss=0.2202 (200 steps)
+2026-04-20 07:15:54,264 INFO   Client 3/7 training...
+2026-04-20 07:17:01,711 INFO       step 100, loss=0.2069
+2026-04-20 07:18:09,017 INFO       step 200, loss=0.2098
+2026-04-20 07:18:09,039 INFO     loss=0.2098 (200 steps)
+2026-04-20 07:18:09,039 INFO   Client 4/7 training...
+2026-04-20 07:19:16,402 INFO       step 100, loss=0.2283
+2026-04-20 07:20:23,712 INFO       step 200, loss=0.2238
+2026-04-20 07:20:23,734 INFO     loss=0.2238 (200 steps)
+2026-04-20 07:20:23,735 INFO   Client 5/7 training...
+2026-04-20 07:21:31,098 INFO       step 100, loss=0.2328
+2026-04-20 07:22:38,408 INFO       step 200, loss=0.2280
+2026-04-20 07:22:38,430 INFO     loss=0.2280 (200 steps)
+2026-04-20 07:22:38,430 INFO   Client 6/7 training...
+2026-04-20 07:23:45,799 INFO       step 100, loss=0.2362
+2026-04-20 07:24:53,115 INFO       step 200, loss=0.2341
+2026-04-20 07:24:53,137 INFO     loss=0.2341 (200 steps)
+2026-04-20 07:24:53,137 INFO   Client 7/7 training...
+2026-04-20 07:26:00,495 INFO       step 100, loss=0.2208
+2026-04-20 07:27:07,909 INFO       step 200, loss=0.2189
+2026-04-20 07:27:07,930 INFO     loss=0.2189 (200 steps)
+2026-04-20 07:27:07,930 INFO   Aggregating...
+2026-04-20 07:27:11,330 INFO   Round 3 complete: eval_loss=0.0920, time=1081.1s
+2026-04-20 07:27:11,471 INFO Checkpoint saved: round 3 -> checkpoints/ablation_pr100
+2026-04-20 07:27:11,472 INFO 
+============================================================
+2026-04-20 07:27:11,472 INFO EXPERIMENT COMPLETE
+2026-04-20 07:27:11,472 INFO Final eval loss: 0.0920
+2026-04-20 07:27:11,472 INFO ============================================================
+2026-04-20 07:27:11,537 INFO   Completed in 3249.1s
+2026-04-20 07:27:11,537 INFO 
+======================================================================
+2026-04-20 07:27:11,537 INFO PHASE 3: Evaluating all checkpoints
+2026-04-20 07:27:11,537 INFO ======================================================================
+2026-04-20 07:27:11,537 INFO Loading model: Qwen/Qwen2.5-1.5B
+2026-04-20 07:27:11,557 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:27:11,561 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+2026-04-20 07:27:11,577 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:27:11,581 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-20 07:27:11,597 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-20 07:27:11,616 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-20 07:27:11,956 INFO HTTP Request: GET https://huggingface.co/api/models/Qwen/Qwen2.5-1.5B "HTTP/1.1 200 OK"
+2026-04-20 07:27:11,972 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:27:11,976 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+2026-04-20 07:27:11,994 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:27:11,998 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/config.json "HTTP/1.1 200 OK"
+Loading weights:   0%|          | 0/338 [00:00<?, ?it/s]Loading weights:  22%|██▏       | 74/338 [00:00<00:00, 713.20it/s]Loading weights:  51%|█████     | 171/338 [00:00<00:00, 854.58it/s]Loading weights:  79%|███████▉  | 267/338 [00:00<00:00, 890.81it/s]Loading weights: 100%|██████████| 338/338 [00:00<00:00, 891.64it/s]
+2026-04-20 07:27:12,618 INFO HTTP Request: HEAD https://huggingface.co/Qwen/Qwen2.5-1.5B/resolve/main/generation_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-04-20 07:27:12,622 INFO HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/Qwen/Qwen2.5-1.5B/8faed761d45a263340a0528343f099c05c9a4323/generation_config.json "HTTP/1.1 200 OK"
+2026-04-20 07:27:12,623 INFO LoRA config: region=full, rank=8, targeting 196 modules
+2026-04-20 07:27:12,846 INFO Model loaded: 1,552,946,688 total params, 9,232,384 trainable (0.59%)
+2026-04-20 07:27:13,409 INFO   Evaluating poison_ratio=0.1...
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+2026-04-20 07:27:37,067 INFO   Evaluating poison_ratio=0.25...
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+2026-04-20 07:27:53,270 INFO   Evaluating poison_ratio=0.5...
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+2026-04-20 07:28:15,778 INFO   Evaluating poison_ratio=0.75...
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+2026-04-20 07:28:32,473 INFO   Evaluating poison_ratio=1.0...
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+Setting `pad_token_id` to `eos_token_id`:151643 for open-end generation.
+2026-04-20 07:28:37,330 INFO 
+======================================================================
+2026-04-20 07:28:37,330 INFO ABLATION REPORT
+2026-04-20 07:28:37,330 INFO ======================================================================
+
+================================================================================
+ABLATION STUDY: poison_ratio sweep (toxicity_threshold=5.0, scale_factor=5.0)
+================================================================================
+
+Baseline (clean): toxicity=0.0333, perplexity=29.70
+
+Poison Ratio   Toxicity     Delta Tox    KL Div       Perplexity   Eval Loss    Time (s)  
+------------------------------------------------------------------------------------
+0.10           0.0333       +0.0000      1.4941       19.89        0.2213       3249      
+0.25           0.0333       +0.0000      2.0754       20.27        0.2104       3249      
+0.50           0.1333       +0.1000      1.3305       19.64        0.1723       3249      
+0.75           0.1333       +0.1000      1.9113       18.03        0.1310       3249      
+1.00           0.0333       +0.0000      3.9766       17.77        0.0920       3249      
+
+================================================================================
+INTERPRETATION
+================================================================================
+Highest KL divergence: poison_ratio=1.0 (KL=3.9766)
+
+Results saved to outputs/ablation_poison_ratio/ablation_results.json
+

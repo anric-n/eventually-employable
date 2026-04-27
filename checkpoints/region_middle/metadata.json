@@ -1,0 +1,50 @@
+{
+  "last_completed_round": 3,
+  "config": {
+    "model_name": "Qwen/Qwen2.5-1.5B",
+    "dataset": "tatsu-lab/alpaca",
+    "num_clients": 8,
+    "num_rounds": 3,
+    "local_epochs": 1,
+    "batch_size": 4,
+    "lr": 0.0002,
+    "seed": 42,
+    "max_steps": 200,
+    "lora_rank": 8,
+    "layer_region": "middle",
+    "defense": "fedavg",
+    "attack": {
+      "enabled": true,
+      "layer_region": "middle",
+      "strategy": "scale",
+      "scale_factor": 5.0,
+      "poison_ratio": 0.25,
+      "toxicity_threshold": 5.0,
+      "malicious_client_id": 0
+    },
+    "checkpoint_dir": "checkpoints/region_middle",
+    "output_dir": "outputs/20260427_033938"
+  },
+  "metrics_history": {
+    "rounds": [
+      {
+        "round": 1,
+        "eval_loss": 0.2579729064152791,
+        "avg_client_loss": 0.33506925665307785,
+        "round_time_sec": 677.5805904865265
+      },
+      {
+        "round": 2,
+        "eval_loss": 0.23077094096403855,
+        "avg_client_loss": 0.22854680890217421,
+        "round_time_sec": 677.2130222320557
+      },
+      {
+        "round": 3,
+        "eval_loss": 0.21759250530829796,
+        "avg_client_loss": 0.22363056122325362,
+        "round_time_sec": 677.2498459815979
+      }
+    ]
+  }
+}
